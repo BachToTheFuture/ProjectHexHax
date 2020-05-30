@@ -1,0 +1,2 @@
+population density interactive map: https://leafletjs.com/examples/choropleth/
+global coronavirus data: https://ourworldindata.org/coronavirus-source-data
