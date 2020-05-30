@@ -19388,225 +19388,225 @@ date,location,new_cases,new_deaths,total_cases,total_deaths
 2020-05-28,United Kingdom,2013,412,267240,37460
 2020-05-29,United Kingdom,1887,377,269127,37837
 2020-05-30,United Kingdom,2095,324,271222,38161
-2019-12-31,United States,0,0,0,0
-2020-01-01,United States,0,0,0,0
-2020-01-02,United States,0,0,0,0
-2020-01-03,United States,0,0,0,0
-2020-01-04,United States,0,0,0,0
-2020-01-05,United States,0,0,0,0
-2020-01-06,United States,0,0,0,0
-2020-01-07,United States,0,0,0,0
-2020-01-08,United States,0,0,0,0
-2020-01-09,United States,0,0,0,0
-2020-01-10,United States,0,0,0,0
-2020-01-11,United States,0,0,0,0
-2020-01-12,United States,0,0,0,0
-2020-01-13,United States,0,0,0,0
-2020-01-14,United States,0,0,0,0
-2020-01-15,United States,0,0,0,0
-2020-01-16,United States,0,0,0,0
-2020-01-17,United States,0,0,0,0
-2020-01-18,United States,0,0,0,0
-2020-01-19,United States,0,0,0,0
-2020-01-20,United States,0,0,0,0
-2020-01-21,United States,1,0,1,0
-2020-01-22,United States,0,0,1,0
-2020-01-23,United States,0,0,1,0
-2020-01-24,United States,0,0,1,0
-2020-01-25,United States,1,0,2,0
-2020-01-26,United States,0,0,2,0
-2020-01-27,United States,3,0,5,0
-2020-01-28,United States,0,0,5,0
-2020-01-29,United States,0,0,5,0
-2020-01-30,United States,0,0,5,0
-2020-01-31,United States,1,0,6,0
-2020-02-01,United States,1,0,7,0
-2020-02-02,United States,1,0,8,0
-2020-02-03,United States,3,0,11,0
-2020-02-04,United States,0,0,11,0
-2020-02-05,United States,0,0,11,0
-2020-02-06,United States,1,0,12,0
-2020-02-07,United States,0,0,12,0
-2020-02-08,United States,0,0,12,0
-2020-02-09,United States,0,0,12,0
-2020-02-10,United States,0,0,12,0
-2020-02-11,United States,1,0,13,0
-2020-02-12,United States,0,0,13,0
-2020-02-13,United States,1,0,14,0
-2020-02-14,United States,1,0,15,0
-2020-02-15,United States,0,0,15,0
-2020-02-16,United States,0,0,15,0
-2020-02-17,United States,0,0,15,0
-2020-02-18,United States,0,0,15,0
-2020-02-19,United States,0,0,15,0
-2020-02-20,United States,0,0,15,0
-2020-02-21,United States,1,0,16,0
-2020-02-22,United States,19,0,35,0
-2020-02-23,United States,0,0,35,0
-2020-02-24,United States,0,0,35,0
-2020-02-25,United States,18,0,53,0
-2020-02-26,United States,0,0,53,0
-2020-02-27,United States,6,0,59,0
-2020-02-28,United States,1,0,60,0
-2020-02-29,United States,6,0,66,0
-2020-03-01,United States,3,1,69,1
-2020-03-02,United States,20,1,89,2
-2020-03-03,United States,14,4,103,6
-2020-03-04,United States,22,3,125,9
-2020-03-05,United States,34,2,159,11
-2020-03-06,United States,74,1,233,12
-2020-03-07,United States,105,2,338,14
-2020-03-08,United States,95,3,433,17
-2020-03-09,United States,121,4,554,21
-2020-03-10,United States,200,5,754,26
-2020-03-11,United States,271,2,1025,28
-2020-03-12,United States,287,2,1312,30
-2020-03-13,United States,351,10,1663,40
-2020-03-14,United States,511,7,2174,47
-2020-03-15,United States,777,10,2951,57
-2020-03-16,United States,823,12,3774,69
-2020-03-17,United States,887,16,4661,85
-2020-03-18,United States,1766,23,6427,108
-2020-03-19,United States,2988,42,9415,150
-2020-03-20,United States,4835,0,14250,150
-2020-03-21,United States,5374,110,19624,260
-2020-03-22,United States,7123,80,26747,340
-2020-03-23,United States,8459,131,35206,471
-2020-03-24,United States,11236,119,46442,590
-2020-03-25,United States,8789,211,55231,801
-2020-03-26,United States,13963,249,69194,1050
-2020-03-27,United States,16797,246,85991,1296
-2020-03-28,United States,18695,411,104686,1707
-2020-03-29,United States,19979,484,124665,2191
-2020-03-30,United States,18360,318,143025,2509
-2020-03-31,United States,21595,661,164620,3170
-2020-04-01,United States,24998,909,189618,4079
-2020-04-02,United States,27103,1059,216721,5138
-2020-04-03,United States,28819,915,245540,6053
-2020-04-04,United States,32425,1104,277965,7157
-2020-04-05,United States,34272,1344,312237,8501
-2020-04-06,United States,25398,1146,337635,9647
-2020-04-07,United States,30561,1342,368196,10989
-2020-04-08,United States,30613,1906,398809,12895
-2020-04-09,United States,33323,1922,432132,14817
-2020-04-10,United States,33901,1873,466033,16690
-2020-04-11,United States,35527,2087,501560,18777
-2020-04-12,United States,28391,1831,529951,20608
-2020-04-13,United States,27620,1500,557571,22108
-2020-04-14,United States,25023,1541,582594,23649
-2020-04-15,United States,26922,2408,609516,26057
-2020-04-16,United States,30148,4928,639664,30985
-2020-04-17,United States,31667,2299,671331,33284
-2020-04-18,United States,30833,3770,702164,37054
-2020-04-19,United States,32922,1856,735086,38910
-2020-04-20,United States,24601,1772,759687,40682
-2020-04-21,United States,28065,1857,787752,42539
-2020-04-22,United States,37289,2524,825041,45063
-2020-04-23,United States,17588,1721,842629,46784
-2020-04-24,United States,26543,3179,869172,49963
-2020-04-25,United States,21352,1054,890524,51017
-2020-04-26,United States,48529,2172,939053,53189
-2020-04-27,United States,26857,1687,965910,54876
-2020-04-28,United States,22541,1369,988451,56245
-2020-04-29,United States,24132,2110,1012583,58355
-2020-04-30,United States,27326,2611,1039909,60966
-2020-05-01,United States,29917,2040,1069826,63006
-2020-05-02,United States,33955,2062,1103781,65068
-2020-05-03,United States,29288,1317,1133069,66385
-2020-05-04,United States,24972,1297,1158041,67682
-2020-05-05,United States,22593,1252,1180634,68934
-2020-05-06,United States,23841,2144,1204475,71078
-2020-05-07,United States,24128,2353,1228603,73431
-2020-05-08,United States,28369,2239,1256972,75670
-2020-05-09,United States,26957,1510,1283929,77180
-2020-05-10,United States,25612,1614,1309541,78794
-2020-05-11,United States,20258,734,1329799,79528
-2020-05-12,United States,18117,1156,1347916,80684
-2020-05-13,United States,22048,1703,1369964,82387
-2020-05-14,United States,20782,1746,1390746,84133
-2020-05-15,United States,27143,1773,1417889,85906
-2020-05-16,United States,25508,1662,1443397,87568
-2020-05-17,United States,24487,1186,1467884,88754
-2020-05-18,United States,18873,808,1486757,89562
-2020-05-19,United States,21841,791,1508598,90353
-2020-05-20,United States,19970,1568,1528568,91921
-2020-05-21,United States,23285,1518,1551853,93439
-2020-05-22,United States,25434,1263,1577287,94702
-2020-05-23,United States,24147,1305,1601434,96007
-2020-05-24,United States,21236,1080,1622670,97087
-2020-05-25,United States,20568,633,1643238,97720
-2020-05-26,United States,19064,500,1662302,98220
-2020-05-27,United States,18910,696,1681212,98916
-2020-05-28,United States,18721,1526,1699933,100442
-2020-05-29,United States,21817,1175,1721750,101617
-2020-05-30,United States,25337,1219,1747087,102836
-2020-03-24,United States Virgin Islands,17,0,17,0
-2020-03-25,United States Virgin Islands,0,0,17,0
-2020-03-26,United States Virgin Islands,0,0,17,0
-2020-03-27,United States Virgin Islands,0,0,17,0
-2020-03-28,United States Virgin Islands,2,0,19,0
-2020-03-29,United States Virgin Islands,3,0,22,0
-2020-03-30,United States Virgin Islands,8,0,30,0
-2020-04-01,United States Virgin Islands,0,0,30,0
-2020-04-02,United States Virgin Islands,0,0,30,0
-2020-04-03,United States Virgin Islands,3,0,33,0
-2020-04-04,United States Virgin Islands,7,0,40,0
-2020-04-05,United States Virgin Islands,0,0,40,0
-2020-04-06,United States Virgin Islands,2,1,42,1
-2020-04-07,United States Virgin Islands,0,0,42,1
-2020-04-08,United States Virgin Islands,3,0,45,1
-2020-04-09,United States Virgin Islands,0,0,45,1
-2020-04-10,United States Virgin Islands,5,0,50,1
-2020-04-11,United States Virgin Islands,0,0,50,1
-2020-04-12,United States Virgin Islands,1,0,51,1
-2020-04-13,United States Virgin Islands,0,0,51,1
-2020-04-14,United States Virgin Islands,0,0,51,1
-2020-04-15,United States Virgin Islands,0,0,51,1
-2020-04-16,United States Virgin Islands,0,0,51,1
-2020-04-17,United States Virgin Islands,0,0,51,1
-2020-04-18,United States Virgin Islands,0,1,51,2
-2020-04-19,United States Virgin Islands,2,1,53,3
-2020-04-20,United States Virgin Islands,0,0,53,3
-2020-04-21,United States Virgin Islands,1,0,54,3
-2020-04-22,United States Virgin Islands,0,0,54,3
-2020-04-23,United States Virgin Islands,0,0,54,3
-2020-04-24,United States Virgin Islands,0,0,54,3
-2020-04-25,United States Virgin Islands,0,0,54,3
-2020-04-26,United States Virgin Islands,1,0,55,3
-2020-04-27,United States Virgin Islands,0,0,55,3
-2020-04-28,United States Virgin Islands,4,1,59,4
-2020-04-29,United States Virgin Islands,0,0,59,4
-2020-04-30,United States Virgin Islands,7,0,66,4
-2020-05-01,United States Virgin Islands,0,0,66,4
-2020-05-02,United States Virgin Islands,0,0,66,4
-2020-05-03,United States Virgin Islands,0,0,66,4
-2020-05-04,United States Virgin Islands,0,0,66,4
-2020-05-05,United States Virgin Islands,0,0,66,4
-2020-05-06,United States Virgin Islands,0,0,66,4
-2020-05-07,United States Virgin Islands,0,0,66,4
-2020-05-08,United States Virgin Islands,0,0,66,4
-2020-05-09,United States Virgin Islands,2,0,68,4
-2020-05-10,United States Virgin Islands,1,0,69,4
-2020-05-11,United States Virgin Islands,0,0,69,4
-2020-05-12,United States Virgin Islands,0,1,69,5
-2020-05-13,United States Virgin Islands,0,0,69,5
-2020-05-14,United States Virgin Islands,0,1,69,6
-2020-05-15,United States Virgin Islands,0,0,69,6
-2020-05-16,United States Virgin Islands,0,0,69,6
-2020-05-17,United States Virgin Islands,0,0,69,6
-2020-05-18,United States Virgin Islands,0,0,69,6
-2020-05-19,United States Virgin Islands,0,0,69,6
-2020-05-20,United States Virgin Islands,0,0,69,6
-2020-05-21,United States Virgin Islands,0,0,69,6
-2020-05-22,United States Virgin Islands,0,0,69,6
-2020-05-23,United States Virgin Islands,0,0,69,6
-2020-05-24,United States Virgin Islands,0,0,69,6
-2020-05-25,United States Virgin Islands,0,0,69,6
-2020-05-26,United States Virgin Islands,0,0,69,6
-2020-05-27,United States Virgin Islands,0,0,69,6
-2020-05-28,United States Virgin Islands,0,0,69,6
-2020-05-29,United States Virgin Islands,0,0,69,6
-2020-05-30,United States Virgin Islands,0,0,69,6
+2019-12-31,United States of America,0,0,0,0
+2020-01-01,United States of America,0,0,0,0
+2020-01-02,United States of America,0,0,0,0
+2020-01-03,United States of America,0,0,0,0
+2020-01-04,United States of America,0,0,0,0
+2020-01-05,United States of America,0,0,0,0
+2020-01-06,United States of America,0,0,0,0
+2020-01-07,United States of America,0,0,0,0
+2020-01-08,United States of America,0,0,0,0
+2020-01-09,United States of America,0,0,0,0
+2020-01-10,United States of America,0,0,0,0
+2020-01-11,United States of America,0,0,0,0
+2020-01-12,United States of America,0,0,0,0
+2020-01-13,United States of America,0,0,0,0
+2020-01-14,United States of America,0,0,0,0
+2020-01-15,United States of America,0,0,0,0
+2020-01-16,United States of America,0,0,0,0
+2020-01-17,United States of America,0,0,0,0
+2020-01-18,United States of America,0,0,0,0
+2020-01-19,United States of America,0,0,0,0
+2020-01-20,United States of America,0,0,0,0
+2020-01-21,United States of America,1,0,1,0
+2020-01-22,United States of America,0,0,1,0
+2020-01-23,United States of America,0,0,1,0
+2020-01-24,United States of America,0,0,1,0
+2020-01-25,United States of America,1,0,2,0
+2020-01-26,United States of America,0,0,2,0
+2020-01-27,United States of America,3,0,5,0
+2020-01-28,United States of America,0,0,5,0
+2020-01-29,United States of America,0,0,5,0
+2020-01-30,United States of America,0,0,5,0
+2020-01-31,United States of America,1,0,6,0
+2020-02-01,United States of America,1,0,7,0
+2020-02-02,United States of America,1,0,8,0
+2020-02-03,United States of America,3,0,11,0
+2020-02-04,United States of America,0,0,11,0
+2020-02-05,United States of America,0,0,11,0
+2020-02-06,United States of America,1,0,12,0
+2020-02-07,United States of America,0,0,12,0
+2020-02-08,United States of America,0,0,12,0
+2020-02-09,United States of America,0,0,12,0
+2020-02-10,United States of America,0,0,12,0
+2020-02-11,United States of America,1,0,13,0
+2020-02-12,United States of America,0,0,13,0
+2020-02-13,United States of America,1,0,14,0
+2020-02-14,United States of America,1,0,15,0
+2020-02-15,United States of America,0,0,15,0
+2020-02-16,United States of America,0,0,15,0
+2020-02-17,United States of America,0,0,15,0
+2020-02-18,United States of America,0,0,15,0
+2020-02-19,United States of America,0,0,15,0
+2020-02-20,United States of America,0,0,15,0
+2020-02-21,United States of America,1,0,16,0
+2020-02-22,United States of America,19,0,35,0
+2020-02-23,United States of America,0,0,35,0
+2020-02-24,United States of America,0,0,35,0
+2020-02-25,United States of America,18,0,53,0
+2020-02-26,United States of America,0,0,53,0
+2020-02-27,United States of America,6,0,59,0
+2020-02-28,United States of America,1,0,60,0
+2020-02-29,United States of America,6,0,66,0
+2020-03-01,United States of America,3,1,69,1
+2020-03-02,United States of America,20,1,89,2
+2020-03-03,United States of America,14,4,103,6
+2020-03-04,United States of America,22,3,125,9
+2020-03-05,United States of America,34,2,159,11
+2020-03-06,United States of America,74,1,233,12
+2020-03-07,United States of America,105,2,338,14
+2020-03-08,United States of America,95,3,433,17
+2020-03-09,United States of America,121,4,554,21
+2020-03-10,United States of America,200,5,754,26
+2020-03-11,United States of America,271,2,1025,28
+2020-03-12,United States of America,287,2,1312,30
+2020-03-13,United States of America,351,10,1663,40
+2020-03-14,United States of America,511,7,2174,47
+2020-03-15,United States of America,777,10,2951,57
+2020-03-16,United States of America,823,12,3774,69
+2020-03-17,United States of America,887,16,4661,85
+2020-03-18,United States of America,1766,23,6427,108
+2020-03-19,United States of America,2988,42,9415,150
+2020-03-20,United States of America,4835,0,14250,150
+2020-03-21,United States of America,5374,110,19624,260
+2020-03-22,United States of America,7123,80,26747,340
+2020-03-23,United States of America,8459,131,35206,471
+2020-03-24,United States of America,11236,119,46442,590
+2020-03-25,United States of America,8789,211,55231,801
+2020-03-26,United States of America,13963,249,69194,1050
+2020-03-27,United States of America,16797,246,85991,1296
+2020-03-28,United States of America,18695,411,104686,1707
+2020-03-29,United States of America,19979,484,124665,2191
+2020-03-30,United States of America,18360,318,143025,2509
+2020-03-31,United States of America,21595,661,164620,3170
+2020-04-01,United States of America,24998,909,189618,4079
+2020-04-02,United States of America,27103,1059,216721,5138
+2020-04-03,United States of America,28819,915,245540,6053
+2020-04-04,United States of America,32425,1104,277965,7157
+2020-04-05,United States of America,34272,1344,312237,8501
+2020-04-06,United States of America,25398,1146,337635,9647
+2020-04-07,United States of America,30561,1342,368196,10989
+2020-04-08,United States of America,30613,1906,398809,12895
+2020-04-09,United States of America,33323,1922,432132,14817
+2020-04-10,United States of America,33901,1873,466033,16690
+2020-04-11,United States of America,35527,2087,501560,18777
+2020-04-12,United States of America,28391,1831,529951,20608
+2020-04-13,United States of America,27620,1500,557571,22108
+2020-04-14,United States of America,25023,1541,582594,23649
+2020-04-15,United States of America,26922,2408,609516,26057
+2020-04-16,United States of America,30148,4928,639664,30985
+2020-04-17,United States of America,31667,2299,671331,33284
+2020-04-18,United States of America,30833,3770,702164,37054
+2020-04-19,United States of America,32922,1856,735086,38910
+2020-04-20,United States of America,24601,1772,759687,40682
+2020-04-21,United States of America,28065,1857,787752,42539
+2020-04-22,United States of America,37289,2524,825041,45063
+2020-04-23,United States of America,17588,1721,842629,46784
+2020-04-24,United States of America,26543,3179,869172,49963
+2020-04-25,United States of America,21352,1054,890524,51017
+2020-04-26,United States of America,48529,2172,939053,53189
+2020-04-27,United States of America,26857,1687,965910,54876
+2020-04-28,United States of America,22541,1369,988451,56245
+2020-04-29,United States of America,24132,2110,1012583,58355
+2020-04-30,United States of America,27326,2611,1039909,60966
+2020-05-01,United States of America,29917,2040,1069826,63006
+2020-05-02,United States of America,33955,2062,1103781,65068
+2020-05-03,United States of America,29288,1317,1133069,66385
+2020-05-04,United States of America,24972,1297,1158041,67682
+2020-05-05,United States of America,22593,1252,1180634,68934
+2020-05-06,United States of America,23841,2144,1204475,71078
+2020-05-07,United States of America,24128,2353,1228603,73431
+2020-05-08,United States of America,28369,2239,1256972,75670
+2020-05-09,United States of America,26957,1510,1283929,77180
+2020-05-10,United States of America,25612,1614,1309541,78794
+2020-05-11,United States of America,20258,734,1329799,79528
+2020-05-12,United States of America,18117,1156,1347916,80684
+2020-05-13,United States of America,22048,1703,1369964,82387
+2020-05-14,United States of America,20782,1746,1390746,84133
+2020-05-15,United States of America,27143,1773,1417889,85906
+2020-05-16,United States of America,25508,1662,1443397,87568
+2020-05-17,United States of America,24487,1186,1467884,88754
+2020-05-18,United States of America,18873,808,1486757,89562
+2020-05-19,United States of America,21841,791,1508598,90353
+2020-05-20,United States of America,19970,1568,1528568,91921
+2020-05-21,United States of America,23285,1518,1551853,93439
+2020-05-22,United States of America,25434,1263,1577287,94702
+2020-05-23,United States of America,24147,1305,1601434,96007
+2020-05-24,United States of America,21236,1080,1622670,97087
+2020-05-25,United States of America,20568,633,1643238,97720
+2020-05-26,United States of America,19064,500,1662302,98220
+2020-05-27,United States of America,18910,696,1681212,98916
+2020-05-28,United States of America,18721,1526,1699933,100442
+2020-05-29,United States of America,21817,1175,1721750,101617
+2020-05-30,United States of America,25337,1219,1747087,102836
+2020-03-24,United States of America Virgin Islands,17,0,17,0
+2020-03-25,United States of America Virgin Islands,0,0,17,0
+2020-03-26,United States of America Virgin Islands,0,0,17,0
+2020-03-27,United States of America Virgin Islands,0,0,17,0
+2020-03-28,United States of America Virgin Islands,2,0,19,0
+2020-03-29,United States of America Virgin Islands,3,0,22,0
+2020-03-30,United States of America Virgin Islands,8,0,30,0
+2020-04-01,United States of America Virgin Islands,0,0,30,0
+2020-04-02,United States of America Virgin Islands,0,0,30,0
+2020-04-03,United States of America Virgin Islands,3,0,33,0
+2020-04-04,United States of America Virgin Islands,7,0,40,0
+2020-04-05,United States of America Virgin Islands,0,0,40,0
+2020-04-06,United States of America Virgin Islands,2,1,42,1
+2020-04-07,United States of America Virgin Islands,0,0,42,1
+2020-04-08,United States of America Virgin Islands,3,0,45,1
+2020-04-09,United States of America Virgin Islands,0,0,45,1
+2020-04-10,United States of America Virgin Islands,5,0,50,1
+2020-04-11,United States of America Virgin Islands,0,0,50,1
+2020-04-12,United States of America Virgin Islands,1,0,51,1
+2020-04-13,United States of America Virgin Islands,0,0,51,1
+2020-04-14,United States of America Virgin Islands,0,0,51,1
+2020-04-15,United States of America Virgin Islands,0,0,51,1
+2020-04-16,United States of America Virgin Islands,0,0,51,1
+2020-04-17,United States of America Virgin Islands,0,0,51,1
+2020-04-18,United States of America Virgin Islands,0,1,51,2
+2020-04-19,United States of America Virgin Islands,2,1,53,3
+2020-04-20,United States of America Virgin Islands,0,0,53,3
+2020-04-21,United States of America Virgin Islands,1,0,54,3
+2020-04-22,United States of America Virgin Islands,0,0,54,3
+2020-04-23,United States of America Virgin Islands,0,0,54,3
+2020-04-24,United States of America Virgin Islands,0,0,54,3
+2020-04-25,United States of America Virgin Islands,0,0,54,3
+2020-04-26,United States of America Virgin Islands,1,0,55,3
+2020-04-27,United States of America Virgin Islands,0,0,55,3
+2020-04-28,United States of America Virgin Islands,4,1,59,4
+2020-04-29,United States of America Virgin Islands,0,0,59,4
+2020-04-30,United States of America Virgin Islands,7,0,66,4
+2020-05-01,United States of America Virgin Islands,0,0,66,4
+2020-05-02,United States of America Virgin Islands,0,0,66,4
+2020-05-03,United States of America Virgin Islands,0,0,66,4
+2020-05-04,United States of America Virgin Islands,0,0,66,4
+2020-05-05,United States of America Virgin Islands,0,0,66,4
+2020-05-06,United States of America Virgin Islands,0,0,66,4
+2020-05-07,United States of America Virgin Islands,0,0,66,4
+2020-05-08,United States of America Virgin Islands,0,0,66,4
+2020-05-09,United States of America Virgin Islands,2,0,68,4
+2020-05-10,United States of America Virgin Islands,1,0,69,4
+2020-05-11,United States of America Virgin Islands,0,0,69,4
+2020-05-12,United States of America Virgin Islands,0,1,69,5
+2020-05-13,United States of America Virgin Islands,0,0,69,5
+2020-05-14,United States of America Virgin Islands,0,1,69,6
+2020-05-15,United States of America Virgin Islands,0,0,69,6
+2020-05-16,United States of America Virgin Islands,0,0,69,6
+2020-05-17,United States of America Virgin Islands,0,0,69,6
+2020-05-18,United States of America Virgin Islands,0,0,69,6
+2020-05-19,United States of America Virgin Islands,0,0,69,6
+2020-05-20,United States of America Virgin Islands,0,0,69,6
+2020-05-21,United States of America Virgin Islands,0,0,69,6
+2020-05-22,United States of America Virgin Islands,0,0,69,6
+2020-05-23,United States of America Virgin Islands,0,0,69,6
+2020-05-24,United States of America Virgin Islands,0,0,69,6
+2020-05-25,United States of America Virgin Islands,0,0,69,6
+2020-05-26,United States of America Virgin Islands,0,0,69,6
+2020-05-27,United States of America Virgin Islands,0,0,69,6
+2020-05-28,United States of America Virgin Islands,0,0,69,6
+2020-05-29,United States of America Virgin Islands,0,0,69,6
+2020-05-30,United States of America Virgin Islands,0,0,69,6
 2020-03-15,Uruguay,6,0,6,0
 2020-03-16,Uruguay,2,0,8,0
 2020-03-17,Uruguay,21,0,29,0
