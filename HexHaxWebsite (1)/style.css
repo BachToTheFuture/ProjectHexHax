@@ -1,0 +1,174 @@
+
+
+html, body{
+  font-family: 'Open Sans', sans-serif; 
+  color: rgb(78, 78, 78);
+}
+
+h2 {
+	font-family: 'Open Sans', sans-serif; 
+	color: #333;
+	font-weight:800;
+}
+
+h3 {
+	font-family: 'Open Sans', sans-serif; 
+	color: #333;
+	font-weight:700;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+	font-size:16px;
+}
+
+.navbar{
+  width: 100%;
+  margin-bottom: 2%;
+  margin-right: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-color: white;
+  text-align: right;
+  z-index: 9999;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2)
+}
+
+.nav-item {
+	font-size:18px;
+	font-weight:700;
+  cursor: pointer;
+}
+
+.navbar a{
+  margin-left: 1%;
+}
+.navbarpic{
+  float: left;
+  padding-left: 2%;
+}
+
+.map{
+  width: 100%;
+  background-color: lightblue;
+  margin-bottom: 2%;
+}
+
+.homeinfo{
+  width: 100%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+
+.homeinfo p{
+  width: 75%;
+  padding-bottom: 5%;
+}
+
+.team{
+  float: left;
+  width:100%;
+  height: 70%;
+  margin-left: 5%;
+  margin-bottom: 2%;
+}
+
+.team-member-name {
+	margin-top:20px;
+}
+
+.subpage-title {
+	padding:10px;
+	border-bottom:3px solid #A3D9B8;
+}
+
+.member{
+  float: left;
+  width: 15%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+footer {
+  float: left;
+  width: 100%;
+  padding: 3px;
+  padding-top: 2%;
+  background-color: rgba(190, 206, 226, 0.733);
+  color: white;
+}
+
+.socialmedia{
+  margin-top: 2%;
+  margin-left: 45%;
+  float:left;
+}
+
+table, th, td {
+  border-collapse: collapse;
+  text-align: center;
+}
+th, td {
+  padding: 15px;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 70px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-github{
+  font-size:80px;
+  color:grey;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.container{
+  padding: 0 16px;
+  padding-bottom: 5px;
+}
+
+.card{
+  height: 500px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+}
+
+.title{
+  color: grey;
+  font-size: 14px;
+}
+
+.space {
+	margin:100px;
+}
+
+.sources{
+  
+}
+
+#mapid {
+	margin-top:-30px;
+	height: 85vh;
+}
+
+.info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } 
+.legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
