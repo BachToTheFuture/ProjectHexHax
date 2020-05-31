@@ -12,7 +12,7 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_M
 */
 L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
 	maxZoom: 20,
-	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
 }).addTo(map);
 
 var southWest = L.latLng(-89.98155760646617, -1000000),
@@ -97,7 +97,7 @@ map.on('click', function (info) {
 				</div>
 			</div>`);
 				
-			$.get(`http://nominatim.openstreetmap.org/search?q=${data.address.state + "+" + data.address.country}&polygon_geojson=1&format=json`, function(data) {
+			$.get(`https://nominatim.openstreetmap.org/search?q=${data.address.state + "+" + data.address.country}&polygon_geojson=1&format=json`, function(data) {
 				console.log(data);
 				if (bounds_geojson !== undefined) map.removeLayer(bounds_geojson);
 				bounds_geojson = L.geoJson(data[0].geojson, {
@@ -167,7 +167,7 @@ map.on('click', function (info) {
 				</div>
 			</div>`);
 
-			$.get(`http://nominatim.openstreetmap.org/search?country=${data.address.country}&polygon_geojson=1&format=json`, function(data) {
+			$.get(`https://nominatim.openstreetmap.org/search?country=${data.address.country}&polygon_geojson=1&format=json`, function(data) {
 				console.log(data);
 				if (bounds_geojson !== undefined) map.removeLayer(bounds_geojson);
 				bounds_geojson = L.geoJson(data[0].geojson, {
