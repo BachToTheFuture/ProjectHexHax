@@ -306,6 +306,7 @@ footer h4{
     width:100%;
     margin-bottom: 5%
   }
+
   table, th, td {
     float: left;
     margin-left: 12%;
@@ -315,7 +316,6 @@ footer h4{
   th, td {
     padding: 15px;
   }
-
 }
 /* For tools */
 .tools{
@@ -327,4 +327,13 @@ footer h4{
 
 .tool{
   margin: auto;
+}
+
+.navbar-brand:hover {
+  opacity:70%;
+  transition:all 0.2s linear;
+}
+
+.navbar-brand {
+  transition:all 0.2s linear;
 }
