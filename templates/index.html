@@ -6,6 +6,7 @@
     <title>HexHax</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link rel="icon" href="static/pictures/logo.png">
   </head>
   <body>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
@@ -19,6 +20,7 @@
     <script src="static/js/sidebar.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
     <link href="static/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="static/css/loading.css" rel="stylesheet" type="text/css" />
     <script src="static/js/script.js"></script>
     
 	<!--Code for navbar-->
@@ -90,8 +92,10 @@
   </script>
 
   <div id="mapid"></div>
+  <!---
   <script src="static/js/us-states.js"></script>
   <script src="static/js/countries.js"></script>
+  -->
 	<script src="static/js/map.js"></script>
 
     <div class = "homeinfo">
@@ -104,11 +108,34 @@
 	<!-- For graphs -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
-    <center>
-      <h2 class="subpage-title" id="process-page"> Our Process </h2>
-      <br><br><br><br><br>
-    	<img src="static/pictures/process.png" alt="Process" style="width:80%">
-    </center>
+  <center>
+    <h2 class="subpage-title" id="process-page"> Our Process </h2>
+    <br><br>
+    <img src="static/pictures/process.png" alt="Process" style="width:80%">
+    <br><br><br>
+    <h4> Tools and Technology </h4>
+    <br><br>
+    <div class = "tools" style = "width:95%">
+      <div class = "tool">
+        <img src = "static/pictures/pythonlogo.png" alt="Python Logo" style = "width: 250px">
+      </div>
+      <div class = "tool">
+        <img src = "static/pictures/htmlLogo.png" alt="HTML Logo" style = "width: 100px">
+      </div>
+      <div class = "tool">
+        <img src = "static/pictures/csslogo.png" alt="CSS Logo" style = "width: 73px">
+      </div>
+      <div class = "tool">
+        <img src = "static/pictures/jslogo.png" alt="JS Logo" style = "width: 95px">
+      </div>
+      <div class = "tool">
+        <img src = "static/pictures/replitlogo.svg" alt="replit Logo" style = "width: 180px">
+      </div>
+      <div class = "tool">
+        <img src = "static/pictures/earthenginelogo.jpg" alt="Earth Engine Logo" style = "width: 250px">
+      </div>
+    </div>
+  </center>
 
 	<center>
     <br><br><br><br>
@@ -194,6 +221,7 @@
 		&nbsp;
 	</div>
     
+    <!-- Our Sources -->
     <footer>
       <h2>Sources</h2>
       <h4>
@@ -210,9 +238,10 @@
         Data
       </h4>
       <ul>
-        <li> </li>
-        <li> </li>
-        <li> </li>
+        <li> <a href="https://ourworldindata.org/coronavirus-source-data"> Global Coronavirus Data </a></li>
+        <li> <a href="https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/"> US State Specific Data </a></li>
+        <li> <a href="https://malariaatlas.org/research-project/accessibility_to_cities/"> Global Accessibility to Cities </li>
+        <li> <a href="https://oui.doleta.gov/unemploy/claims.asp"> US State Unemployment Claims </a></li>
         <li> </li>
       </ul>
     </footer>
