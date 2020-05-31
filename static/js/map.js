@@ -235,10 +235,10 @@ function style(feature) {
 	return {
 		weight: 2,
 		opacity: 1,
-		color: 'white',
-		dashArray: '3',
-		fillOpacity: 0.7,
-		fillColor: getColor(feature.properties.density)
+		color: getColor(feature.properties.density),
+		dashArray: '',
+		fillOpacity: 0,
+		//fillColor: getColor(feature.properties.density)
 	};
 }
 
@@ -249,7 +249,8 @@ function highlightFeature(e) {
 		weight: 5,
 		color: '#666',
 		dashArray: '',
-		fillOpacity: 0.7
+		fillOpacity: 0.7,
+		fillColor: "white"
 	});
 
 	if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
@@ -271,18 +272,27 @@ function onEachFeature(feature, layer) {
 	layer.on({
 		mouseover: highlightFeature,
 		mouseout: resetHighlight,
-		//click: zoomToFeature
+		click: zoomToFeature
 	});
 }
 
-/*
+
 geojson = L.geoJson(statesData, {
 	style: style,
 	onEachFeature: onEachFeature
 }).addTo(map);
-*/
 
-/*
+geojson = L.geoJson(statesData, {
+	style: style,
+	onEachFeature: onEachFeature
+}).addTo(map);
+
+geojson = L.geoJson(countries_data, {
+	style: style,
+	onEachFeature: onEachFeature
+}).addTo(map);
+
+
 var legend = L.control({position: 'bottomright'});
 
 legend.onAdd = function (map) {
@@ -306,4 +316,3 @@ legend.onAdd = function (map) {
 };
 
 legend.addTo(map);
-*/
