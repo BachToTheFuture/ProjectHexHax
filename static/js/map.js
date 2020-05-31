@@ -5,16 +5,16 @@ var map = L.map('mapid', {
     minZoom: 2,
 	maxZoom: 5
 }).setView([0,0], 3);
-/*
+
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
 	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
 }).addTo(map);
-*/
+/*
 L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
 	maxZoom: 20,
 	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
 }).addTo(map);
-
+*/
 var southWest = L.latLng(-89.98155760646617, -1000000),
 northEast = L.latLng(89.99346179538875, 1000000);
 var bounds = L.latLngBounds(southWest, northEast);
