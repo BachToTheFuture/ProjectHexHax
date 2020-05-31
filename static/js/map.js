@@ -84,8 +84,8 @@ map.on('click', function (info) {
       $("#infobar").html(`
             <h2>${data.address.state + ", " + data.address.country}</h2>
 			<hr>
-			<canvas id="covid-chart-new" width="800" height="500"></canvas>
-			<canvas id="covid-chart-totals" width="800" height="500"></canvas>`);
+			<canvas id="covid-chart-new" width="800" height="800"></canvas>
+			<canvas id="covid-chart-totals" width="800" height="800"></canvas>`);
       //console.log(state_covid_cases[state])
       let total_cases = []
       let total_deaths = []
@@ -132,8 +132,8 @@ map.on('click', function (info) {
 		$("#infobar").html(`
             <h2>${data.address.country}</h2>
 			<hr>
-			<canvas id="covid-chart-new" width="800" height="500"></canvas>
-			<canvas id="covid-chart-totals" width="800" height="500"></canvas>
+			<canvas id="covid-chart-new" width="800" height="800"></canvas>
+			<canvas id="covid-chart-totals" width="800" height="800"></canvas>
         `);
 			//date,location,new_cases,new_deaths,total_cases,total_deaths
 			let new_cases = []
