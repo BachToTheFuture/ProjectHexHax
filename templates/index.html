@@ -11,21 +11,22 @@
 	<script src="https://d3js.org/d3.v5.min.js"></script>
 
     <!-- Needed for interactive map -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.3/leaflet.css'>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="css/sidebar.css">
-	<script src="js/sidebar.js"></script>
+	<link rel="stylesheet" href="static/css/sidebar.css">
+	<script src="static/js/sidebar.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
 	
-	<link href="style.css" rel="stylesheet" type="text/css" />
-	<script src="script.js"></script>
+	<link href="static/css/style.css" rel="stylesheet" type="text/css" />
+	<script src="static/js/script.js"></script>
     
     <!--Code for navbar-->
 	<nav class="navbar navbar-expand-lg navbar-light sticky-top">
-		<a class="navbar-brand" href="#"><img src="pictures/biglogo.png" alt="logo" height = "50"></a>
+		<a class="navbar-brand" href="#"><img src="static/pictures/biglogo.png" alt="logo" height = "50"></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 		</button>
@@ -85,8 +86,8 @@
 
 	<!-- Display the map -->
     <div id="mapid"></div>
-	<script src="us-states.js"></script>
-	<script src="map.js"></script>
+	<script src="static/js/us-states.js"></script>
+	<script src="static/js/map.js"></script>
 
     <div class = "homeinfo">
       <!--Enter general information for the website and what it does-->
@@ -95,13 +96,16 @@
     </div>
 
     
+  <script>
+    processData(`{{data}}`);
+  </script>
 	<!-- For graphs -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
     <center>
       <h2 class="subpage-title" id="process-page"> Process </h2>
       <br><br><br>
-    	<img src="pictures/process.png" alt="Process" style="width:80%">
+    	<img src="static/pictures/process.png" alt="Process" style="width:80%">
     </center>
 
 	<center>
@@ -111,7 +115,7 @@
       <div class="team">
         <div class="member">
             <div class="card">
-              <img src="pictures/Michelle.jpg" alt="Michelle" style="width:100%">
+              <img src="static/pictures/Michelle.jpg" alt="Michelle" style="width:100%">
               <div class="container">
                 <h2 class="team-member-name">Michelle Bryson</h2>
                 <p class="title">Incoming Freshman at Carnegie Mellon University</p>
@@ -122,20 +126,20 @@
 
         <div class="member">
           <div class="card">
-            <img src="pictures/John.jpg" alt="John" style="width:100%">
+            <img src="static/pictures/John.jpg" alt="John" style="width:100%">
             <div class="container">
               <h2 class="team-member-name">John Paul Bunn</h2>
               <p class="title">Incoming Freshman at Milwaukee School of Engineering</p>
-              <p>Major: Computer Science & Game Development</p>
+              <p>Major: Computer Science & Computer Engineering</p>
             </div>
           </div>
         </div>
 
         <div class="member">
           <div class="card">
-            <img src="pictures/Kevin.jpeg" alt="Kevin" style="width:100%">
+            <img src="static/pictures/Kevin.jpeg" alt="Kevin" style="width:100%">
             <div class="container">
-              <h2 class="team-member-name">Kevin Gauld</h2>
+              <h2 class="team-member-name">Kevin<br>Gauld</h2>
               <p class="title">Incoming Freshman at Caltech</p>
               <p>Major: Electrical Engineering</p><br>
             </div> 
@@ -144,7 +148,7 @@
 
         <div class="member">
           <div class="card">
-            <img src="pictures/Jendy.jpg" alt="Jendy" style="width:100%">
+            <img src="static/pictures/Jendy.jpg" alt="Jendy" style="width:100%">
             <div class="container">
               <h2 class="team-member-name">Jendy<br>Ren</h2>
               <p class="title">Incoming Freshman at Stony Brook University</p>
@@ -155,9 +159,9 @@
 
         <div class="member">
           <div class="card">
-            <img src="pictures/Bach.jpg" alt="Bach" style="width:100%">
+            <img src="static/pictures/Bach.jpg" alt="Bach" style="width:100%">
             <div class="container">
-              <h2 class="team-member-name">Bach Nguyen</h2>
+              <h2 class="team-member-name">Bach<br>Nguyen</h2>
               <p class="title">Incoming Freshman at Harvard University</p>
               <p>Major: Computer Science & Neuroscience</p>
             </div>
@@ -166,7 +170,7 @@
 
         <div class="member">
           <div class="card">
-            <img src="pictures/Christina.jpg" alt="Christina" style="width:100%">
+            <img src="static/pictures/Christina.jpg" alt="Christina" style="width:100%">
               <div class="container">
                 <h2 class="team-member-name">Christina Wong</h2>
                 <p class="title">Incoming Freshman at Rice University</p>

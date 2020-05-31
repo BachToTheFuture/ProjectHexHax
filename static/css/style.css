@@ -142,6 +142,10 @@ th, td {
   color: white;
 }
 
+a:hover {
+	text-decoration:none;
+}
+
 .container{
   padding: 0 16px;
   padding-bottom: 5px;
@@ -174,7 +178,41 @@ th, td {
 .legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
 
 @media screen and (max-width: 1000px){
+  .member{
+  float: left;
+  width: 30%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  }
 
+  .team-member-name {
+	margin-top:20px;
+  }
 
+  h2 {
+	font-family: 'Open Sans', sans-serif; 
+	color: #333;
+	font-weight:500;
+  }
+
+}
+
+@media screen and (max-width: 500px){
+  .member{
+  float: left;
+  width: 80%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  }
+
+  .team-member-name {
+	margin-top:20px;
+  }
+
+  h2 {
+	font-family: 'Open Sans', sans-serif; 
+	color: #333;
+	font-weight:500;
+  }
 
 }

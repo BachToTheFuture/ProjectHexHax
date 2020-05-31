@@ -7,18 +7,9 @@ $(document).ready(function (){
 	});
 });
 
-$(document).ready(function() {
-    $.ajax({
-        type: "GET",
-        url: "global_covid.csv",
-        dataType: "text",
-        success: function(data) {processData(data);}
-     });
-});
-
 var covid_data;
 
-//https://stackoverflow.com/questions/7431268/how-to-read-data-from-csv-file-using-javascript
+//https://stackoverflow.com/questi ons/7431268/how-to-read-data-from-csv-file-using-javascript
 function processData(allText) {
     var record_num = 5;  // or however many elements there are in each row
     var allTextLines = allText.split(/\r\n|\n/);
@@ -29,7 +20,5 @@ function processData(allText) {
 		if (!dict[row[1]]) dict[row[1]] = [];
 		dict[row[1]].push({"date":row[0], "new_cases":row[2], "new_deaths":row[3], "total_cases": row[4], "total_deaths":row[5]});
 	}
-	//console.log(dict);
 	covid_data = dict;
-    // alert(lines);
 }
