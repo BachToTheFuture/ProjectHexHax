@@ -9,6 +9,18 @@ var map = L.map('mapid', {
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
 	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
 }).addTo(map);
+
+var NASAGIBS_ModisTerraLSTDay = L.tileLayer('https://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Terra_Land_Surface_Temp_Day/default/{time}/{tilematrixset}{maxZoom}/{z}/{y}/{x}.{format}', {
+	attribution: 'Imagery provided by services from the Global Imagery Browse Services (GIBS), operated by the NASA/GSFC/Earth Science Data and Information System (<a href="https://earthdata.nasa.gov">ESDIS</a>) with funding provided by NASA/HQ.',
+	bounds: [[-85.0511287776, -179.999999975], [85.0511287776, 179.999999975]],
+	minZoom: 1,
+	maxZoom: 7,
+	format: 'png',
+	time: '',
+	tilematrixset: 'GoogleMapsCompatible_Level',
+	opacity: 0.5
+}).addTo(map);
+
 /*
 L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
 	maxZoom: 20,
@@ -82,7 +94,7 @@ map.on('click', function (info) {
 
 			//var data = ["new_cases" for x in covid_data[country]];
 		
-		if (state_covid_cases[state] && state_covid_deaths[state]){
+			if (state_covid_cases[state] && state_covid_deaths[state] && state_unemployment[state]){
 			// Loading screen
 			$("#infobar").html(`
 				<h2>${state + ", " + country}</h2>
@@ -107,47 +119,82 @@ map.on('click', function (info) {
 				$("#infobar").html(`
 				<h2>${state + ", " + country}</h2>
 				<hr>
-				<canvas id="covid-chart-new" width="800" height="800"></canvas>
-				<canvas id="covid-chart-totals" width="800" height="800"></canvas>`);
-			//console.log(state_covid_cases[state])
-			let total_cases = []
-			let total_deaths = []
-			let dates = []
-			for (var n = 0; n < state_covid_cases[state].length; n++) {
-			total_cases.push(state_covid_cases[state][n]["total_cases"]);
-			dates.push(state_covid_cases[state][n]["date"]);
-			}
-
-			for (var m = 0; m < state_covid_deaths[state].length; m++) {
-			total_deaths.push(state_covid_deaths[state][m]["total_deaths"]);
-			//dates.push(state_covid_deaths[state][n]["date"]);
-			}
-
-			console.log(total_deaths)
-			new Chart(document.getElementById("covid-chart-new"), {
-				type: 'line',
-				data: {
-				labels: dates,
-				datasets: [{
-				data: total_cases,
-				label: "Total Cases",
-				borderColor: "#3e95cd",
-				fill: false
-				}, {
-				data: total_deaths,
-				label: "Total Deaths",
-				borderColor: "#000000",
-				fill: false
+				<canvas id="covid-chart-totals" width="800" height="500"></canvas>
+				<canvas id="unemployment-chart" width="800" height="500">`);
+				let total_cases = []
+				let total_deaths = []
+				let dates = []
+		  
+				let initial_claims = []
+				let continued_claims = []
+				let unemployment_dates = []
+				for (var n = 0; n < state_covid_cases[state].length; n++) {
+				  total_cases.push(state_covid_cases[state][n]["total_cases"]);
+				  dates.push(state_covid_cases[state][n]["date"]);
 				}
-				]
-				},
-				options: {
-				title: {
-				display: true,
-				text: 'COVID-19 New Cases and Deaths for '+ state
+		  
+				for (var m = 0; m < state_covid_deaths[state].length; m++) {
+				  total_deaths.push(state_covid_deaths[state][m]["total_deaths"]);
+				  //covid_dates.push(state_covid_deaths[state][n]["date"]);
 				}
+		  
+				for (var u = 0; u < state_unemployment[state].length; u++){
+				   initial_claims.push(state_unemployment[state][u]["initial_claims"]);
+				   continued_claims.push(state_unemployment[state][u]["continued_claims"]);
+				   unemployment_dates.push(state_unemployment[state][u]["date"]);
 				}
-			});
+		  
+				//console.log(total_deaths)
+				new Chart(document.getElementById("covid-chart-totals"), {
+					type: 'line',
+					data: {
+					labels: dates,
+					datasets: [{
+					  data: total_cases,
+					  label: "Total Cases",
+					  borderColor: "#3e95cd",
+					  fill: false
+					  }, {
+					  data: total_deaths,
+					  label: "Total Deaths",
+					  borderColor: "#000000",
+					  fill: false
+					}
+					]
+					},
+					options: {
+					title: {
+					  display: true,
+					  text: 'COVID-19 New Cases and Deaths for '+ state
+					}
+					}
+				  }); //End chart
+		  
+				  new Chart(document.getElementById("unemployment-chart"), {
+						  type: 'line',
+						  data: {
+						  labels: unemployment_dates,
+						  datasets: [{
+							  data: initial_claims,
+							  label: "Initial Claims",
+							  borderColor: "#63d13e",
+							  fill: false
+							  }, {
+							  data: continued_claims,
+							  label: "Continued Claims",
+							  borderColor: "#ff3e33",
+							  fill: false
+							  }
+						  ]
+						  },
+						  options: {
+						  title: {
+							  display: true,
+							  text: 'Unemployment during COVID-19 '+country
+						  }
+						  }
+					  });
+			  
 			});
 			
 		}
@@ -178,8 +225,8 @@ map.on('click', function (info) {
 				$("#infobar").html(`
 				<h2>${country}</h2>
 				<hr>
-				<canvas id="covid-chart-new" width="800" height="800"></canvas>
-				<canvas id="covid-chart-totals" width="800" height="800"></canvas>
+				<canvas id="covid-chart-new" width="800" height="500"></canvas>
+				<canvas id="covid-chart-totals" width="800" height="500"></canvas>
 			`);
 				//date,location,new_cases,new_deaths,total_cases,total_deaths
 				let new_cases = []

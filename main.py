@@ -9,5 +9,6 @@ def sessions():
     return render_template('index.html',
         global_covid_data=open("static/global_covid.csv").read(),
         state_covid_cases=open("static/state_covid_cases.csv").read(),
-        state_covid_deaths=open("static/state_covid_deaths.csv").read())
+        state_covid_deaths=open("static/state_covid_deaths.csv").read(),
+        state_unemployment=open("static/state_unemployment.csv").read())
 

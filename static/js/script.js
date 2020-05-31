@@ -58,3 +58,18 @@ function process_state_deaths(allText) {
   }
   state_covid_deaths = dict;
 }
+
+var state_unemployment;
+function process_state_unemployment(allText) {
+  var allTextLines = allText.split(/\r\n|\n/)
+  var headings = allTextLines[0].split(',');
+
+  var dict = {}
+  for (var row_index = 1; row_index < allTextLines.length; row_index++){
+    var row = allTextLines[row_index].split(',');
+    if (!dict[row[0]]) dict[row[0]] = [];
+    console.log(row[1])
+		dict[row[0]].push({"date":row[1], "initial_claims":row[2], "continued_claims":row[4]});
+  }
+  state_unemployment = dict;
+}
