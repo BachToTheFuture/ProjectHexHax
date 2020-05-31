@@ -26,6 +26,12 @@ h3 {
 	font-weight:700;
 }
 
+h5 {
+	font-family: 'Open Sans', sans-serif; 
+	color: #333;
+	font-weight:700;
+}
+
 p {
 	font-family: 'Open Sans', sans-serif;
 	font-size:16px;
@@ -143,29 +149,24 @@ a:hover {
 }
 
 .card{
-  height: 460px;
+  height: 465px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
 }
-
 .title{
   color: grey;
   font-size: 14px;
 }
-
 a:link {
   color: rgb(0, 128, 145);
 }
-
 a:active {
-  color: rgb(0, 206, 206);
+  color: #A3D9B8;
 }
-
 a:visited {
   color: rgb(0, 128, 145);
 }
-
 a:hover {
-  color: rgb(0, 206, 206);
+  color: #A3D9B8;
 }
 
 .fa {
@@ -206,10 +207,6 @@ a:hover {
 
 .space {
 	margin:100px;
-}
-
-.sources{
-  
 }
 
 #mapid {
@@ -283,6 +280,12 @@ footer h4{
 	  margin-top:20px;
   }
 
+  #meet-the-team{
+    margin-top:5%;
+    width: 100%;
+    float: left;
+  }
+
   h2 {
     font-family: 'Open Sans', sans-serif; 
     color: #333;
@@ -298,6 +301,21 @@ footer h4{
     height: 590px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
   }
+
+  .tech{
+    width:100%;
+    margin-bottom: 5%
+  }
+  table, th, td {
+    float: left;
+    margin-left: 12%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  th, td {
+    padding: 15px;
+  }
+
 }
 /* For tools */
 .tools{

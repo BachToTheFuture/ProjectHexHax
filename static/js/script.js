@@ -8,6 +8,7 @@ $(document).ready(function() {
 	});
 });
 
+/*
 var covid_data;
 
 //https://stackoverflow.com/questions/7431268/how-to-read-data-from-csv-file-using-javascript
@@ -25,6 +26,7 @@ function processData(allText) {
 	covid_data = dict;
     // alert(lines);
 }
+*/
 
 var state_covid_cases;
 function process_state_cases(allText) {
@@ -68,8 +70,7 @@ function process_state_unemployment(allText) {
   for (var row_index = 1; row_index < allTextLines.length; row_index++){
     var row = allTextLines[row_index].split(',');
     if (!dict[row[0]]) dict[row[0]] = [];
-    console.log(row[1])
-		dict[row[0]].push({"date":row[1], "initial_claims":row[2], "continued_claims":row[4]});
+	dict[row[0]].push({"date":row[1], "initial_claims":row[2], "continued_claims":row[4]});
   }
   state_unemployment = dict;
 }

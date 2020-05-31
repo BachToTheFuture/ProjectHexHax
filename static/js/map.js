@@ -13,8 +13,8 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_M
 var NASAGIBS_ModisTerraLSTDay = L.tileLayer('https://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Terra_Land_Surface_Temp_Day/default/{time}/{tilematrixset}{maxZoom}/{z}/{y}/{x}.{format}', {
 	attribution: 'Imagery provided by services from the Global Imagery Browse Services (GIBS), operated by the NASA/GSFC/Earth Science Data and Information System (<a href="https://earthdata.nasa.gov">ESDIS</a>) with funding provided by NASA/HQ.',
 	bounds: [[-85.0511287776, -179.999999975], [85.0511287776, 179.999999975]],
-	minZoom: 1,
-	maxZoom: 7,
+	minZoom: 2,
+	maxZoom: 5,
 	format: 'png',
 	time: '',
 	tilematrixset: 'GoogleMapsCompatible_Level',
@@ -50,6 +50,29 @@ setTimeout(function() {
     sidebar.show();
 }, 500);
 
+
+function resetSidebar() {
+	$("#sidebar").html(`<br>
+	<!--This bar gets updated with graphs and the place info whenever a user clicks-->
+	<div id="infobar">
+		<div class = "veryshortsummary">
+	<h2>
+	  AID PACT
+	</h2>
+	<h5>Artificial Intelligence Derived Predictive Analysis of COVID-19 over Time</h5>
+	<hr>
+	<p> Interact with our map to explore the past, current, and predicted impacts of COVID-19 around the world.</p>
+	<p><b>Click on a country or a region to learn more about it.</b></p>
+
+  <h3> 
+	Our Mission
+  </h3>
+	<hr>
+  <p> HexHax is a part of the 2020 NASA Space Apps COVID-19 Challenge. Together we decided to create a responsive and well-informed website that uses "Earth Observation-derived features with available socio-economic data in order to discover or enhance our understanding of COVID-19 impacts." </p>
+		</div>
+	</div>`);
+	sidebar.show();
+}
 
 var marker = {};
 
@@ -204,6 +227,7 @@ map.on('click', function (info) {
 			$("#infobar").html(`
 				<h2>${country}</h2>
 				<hr>
+				<center><i>Loading data...</i></center>
 				<div class="cssload-container">
 				<ul class="cssload-flex-container">
 					<li>
@@ -227,79 +251,127 @@ map.on('click', function (info) {
 				<hr>
 				<canvas id="covid-chart-new" width="800" height="500"></canvas>
 				<canvas id="covid-chart-totals" width="800" height="500"></canvas>
+				<canvas id="covid-tests" width="800" height="500"></canvas>
 			`);
-				//date,location,new_cases,new_deaths,total_cases,total_deaths
-				let new_cases = []
-				let new_deaths = []
-				let total_cases = []
-				let total_deaths = []
-				let dates = []
-
-				for (var n = 0; n < covid_data[country].length; n++) {
-					new_cases.push(covid_data[country][n]["new_cases"]);
-					new_deaths.push(covid_data[country][n]["new_deaths"]);
-					total_cases.push(covid_data[country][n]["total_cases"]);
-					total_deaths.push(covid_data[country][n]["total_deaths"]);
-					dates.push(covid_data[country][n]["date"]);
-				}
-				//console.log(new_cases);
-				//console.log(dates);
-			
+			for (var n = 17; n < covid_headers.length; n++) {
+				$("#infobar").append(`<canvas id="${"comparison"+n}" width="800" height="500"></canvas>`)
+			}
+				//location,date,total_cases,new_cases,total_deaths,new_deaths,
+				//total_cases_per_million,new_cases_per_million,total_deaths_per_million,
+				//new_deaths_per_million,total_tests,new_tests,total_tests_per_thousand,
+				//new_tests_per_thousand,new_tests_smoothed,new_tests_smoothed_per_thousand,
+				//tests_units,stringency_index,population,population_density,median_age,aged_65_older,
+				//aged_70_older,gdp_per_capita,extreme_poverty,cvd_death_rate,diabetes_prevalence,
+				//female_smokers,male_smokers,handwashing_facilities,hospital_beds_per_100k
+				var country_data = covid_data[country];
+				// New cases/deaths
 				new Chart(document.getElementById("covid-chart-new"), {
 					type: 'line',
 					data: {
-					labels: dates,
-					datasets: [{
-						data: new_cases,
-						label: "New Cases",
-						borderColor: "#63d13e",
-						fill: false
-						}, {
-						data: new_deaths,
-						label: "New Deaths",
-						borderColor: "#ff3e33",
-						fill: false
-						}
-					]
+						labels: country_data.date,
+						datasets: [{
+							data: country_data.new_cases,
+							label: "New Cases",
+							borderColor: "#63d13e",
+							fill: false
+							}, {
+							data: country_data.new_deaths,
+							label: "New Deaths",
+							borderColor: "#ff3e33",
+							fill: false
+							}
+						]
 					},
 					options: {
-					title: {
-						display: true,
-						text: 'COVID-19 New Cases and Deaths for '+country
-					}
+						title: {
+							display: true,
+							text: 'COVID-19 New Cases and Deaths for '+country
+						}
 					}
 				});
-					
-				//end chart
-
+				// Totals
 				new Chart(document.getElementById("covid-chart-totals"), {
 					type: 'line',
 					data: {
-					labels: dates,
-					datasets: [{
-						data: total_cases,
-						label: "Total Cases",
-						borderColor: "#3e95cd",
-						fill: false
-						}, {
-						data: total_deaths,
-						label: "Total Deaths",
-						borderColor: "#000000",
-						fill: false
-						}
-					]
+						labels: country_data.date,
+						datasets: [{
+							data: country_data.total_cases,
+							label: "Total Cases",
+							borderColor: "#63d13e",
+							fill: false
+							}, {
+							data: country_data.total_deaths,
+							label: "Total Deaths",
+							borderColor: "#ff3e33",
+							fill: false
+							}
+						]
 					},
 					options: {
-					title: {
-						display: true,
-						text: 'COVID-19 Total Cases and Deaths for '+country
+						title: {
+							display: true,
+							text: 'COVID-19 Total Cases and Deaths for '+country
 						}
 					}
 				});
+				
+				// New and total tests for COVID
+				new Chart(document.getElementById("covid-tests"), {
+					type: 'line',
+					data: {
+						labels: country_data.date,
+						datasets: [{
+							data: country_data.new_tests,
+							label: "New Tests",
+							borderColor: "#63d13e",
+							fill: false
+							}, {
+							data: country_data.total_tests,
+							label: "Total Tests",
+							borderColor: "#ff3e33",
+							fill: false
+							}
+						]
+					},
+					options: {
+						title: {
+							display: true,
+							text: 'COVID-19 New and Total Tests for '+country
+						},
+						animation:false
+					}
+				});
+
+				// Comparison with the world data
+				for (var n = 17; n < covid_headers.length; n++) {
+					new Chart(document.getElementById("comparison"+n), {
+						type: 'line',
+						data: {
+							labels: country_data.date,
+							datasets: [{
+								data: country_data[covid_headers[n]],
+								label: country + " data",
+								borderColor: "#63d13e",
+								fill: false
+								}, {
+								data: covid_data["World"][covid_headers[n]],
+								label: "World data",
+								borderColor: "#ff3e33",
+								fill: false
+								}
+							]
+						},
+						options: {
+							title: {
+								display: true,
+								text: covid_headers[n]+' for '+country
+							},
+							animation:false
+						}
+					});
+				}
 			});
-			
-				// end
-			}
+		}
 		else {
 			$("#infobar").html(`
 				<h2>${data.address.country}</h2>

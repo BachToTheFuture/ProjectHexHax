@@ -6,7 +6,8 @@
 		-moz-box-sizing: border-box;
 }
 .cssload-container {
-	margin: 19px auto 0 auto;
+    margin: 19px auto 0 auto;
+    margin-left:-40px !important;
 	max-width: 545px;
 }
 
