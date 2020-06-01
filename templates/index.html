@@ -13,7 +13,7 @@
     <!-- cover everything until everything is loaded -->
     <div id="cover">
       
-            <div class="cssload-container">
+            <div class="cssload-container centered">
               <ul class="cssload-flex-container">
                 <li>
                   <span class="cssload-loading cssload-one"></span>
@@ -24,20 +24,6 @@
               </div>
             
     </div>
-    <script>
-      $(updateBoxDimension);
-      $(window).on('resize', updateBoxDimension);
-
-      function updateBoxDimension() {
-          var $box = $('.cssload-container');
-
-          // To center the box
-          var boxLeft = ($(window).width()) / 2 - ($box.width() / 2),
-              boxTop = ($(window).height()) / 2 - ($box.height() / 2);
-
-        $box.attr('style', `margin-left: ${boxLeft-15}px !important; margin-top: ${boxTop}px !important;`)
-      }
-    </script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://d3js.org/d3.v5.min.js"></script>

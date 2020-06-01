@@ -28,12 +28,16 @@
 display: table-cell;
 vertical-align: middle;
 }
-
-.inner {
-margin-left: auto;
-margin-right: auto;
-/*whatever width you want*/
-}
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: -webkit-translate(-50%, -50%);
+    transform: -moz-translate(-50%, -50%);
+    transform: -ms-translate(-50%, -50%);
+    color:darkred;
+  }
 
 .cssload-flex-container {
 	display: flex;
