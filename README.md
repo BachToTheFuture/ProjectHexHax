@@ -1,6 +1,6 @@
 ![banner](img/banner.png)
 
-![screenshot](img/screenshot.png)
+![screenshot](img/Visual.png)
 
 # Predicting Spread of COVID-19 With Machine Learning
 
