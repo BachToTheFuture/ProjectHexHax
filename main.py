@@ -81,13 +81,13 @@ def predict_future(data, days, gini=38, access=442):
             # gini, access: default values for now
             0, gini, access
         ]]
-        point2 = [tcpm.predict(point1)[0],
-                ncpm.predict(point1)[0],
-                tdpm.predict(point1)[0],
-                ndpm.predict(point1)[0],
-                ttpt.predict(point1)[0],
-                ntpt.predict(point1)[0],
-                stidx.predict(point1)[0],
+        point2 = [max(0,tcpm.predict(point1)[0]),
+                max(0, ncpm.predict(point1)[0]),
+                max(0,tdpm.predict(point1)[0]),
+                max(0,ndpm.predict(point1)[0]),
+                max(0,ttpt.predict(point1)[0]),
+                max(0,ntpt.predict(point1)[0]),
+                max(0,stidx.predict(point1)[0]),
                 data["population_density"][-1],
                 data["aged_65_older"][-1],
                 data["gdp_per_capita"][-1],0,gini,access]
