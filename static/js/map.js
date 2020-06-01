@@ -10,6 +10,7 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_M
 	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
 }).addTo(map);
 
+/*
 var NASAGIBS_ModisTerraLSTDay = L.tileLayer('https://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Terra_Land_Surface_Temp_Day/default/{time}/{tilematrixset}{maxZoom}/{z}/{y}/{x}.{format}', {
 	attribution: 'Imagery provided by services from the Global Imagery Browse Services (GIBS), operated by the NASA/GSFC/Earth Science Data and Information System (<a href="https://earthdata.nasa.gov">ESDIS</a>) with funding provided by NASA/HQ.',
 	bounds: [[-85.0511287776, -179.999999975], [85.0511287776, 179.999999975]],
@@ -20,6 +21,7 @@ var NASAGIBS_ModisTerraLSTDay = L.tileLayer('https://map1.vis.earthdata.nasa.gov
 	tilematrixset: 'GoogleMapsCompatible_Level',
 	opacity: 0.5
 }).addTo(map);
+*/
 
 /*
 L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
@@ -78,6 +80,11 @@ var marker = {};
 
 var bounds_geojson;
 
+// Used to determine which factor gets which type of diagram/graph
+var tables = [19, 20, 21, 22, 23, 24, 25, 28, 29];
+var remove = [17, 30, 31, 27];
+var line_graphs = [18];
+
 map.on('click', function (info) {
 	sidebar.show();
     $.get(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${info.latlng.lat}&lon=${info.latlng.lng}`, function(data){
@@ -119,6 +126,7 @@ map.on('click', function (info) {
 		
 			if (state_covid_cases[state] && state_covid_deaths[state] && state_unemployment[state]){
 			// Loading screen
+			
 			$("#infobar").html(`
 				<h2>${state + ", " + country}</h2>
 				<hr>
@@ -245,17 +253,33 @@ map.on('click', function (info) {
 					style: style,
 				}).addTo(map);
 				map.fitBounds(bounds_geojson.getBounds());
-
 				$("#infobar").html(`
 				<h2>${country}</h2>
-				<hr>
-				<canvas id="covid-chart-new" width="800" height="500"></canvas>
-				<canvas id="covid-chart-totals" width="800" height="500"></canvas>
-				<canvas id="covid-tests" width="800" height="500"></canvas>
-			`);
-			for (var n = 17; n < covid_headers.length; n++) {
-				$("#infobar").append(`<canvas id="${"comparison"+n}" width="800" height="500"></canvas>`)
-			}
+
+				<div class="tab">
+					<button class="tablinks" onclick="openTab(event, 'predictions-tab')" id="defaultOpen">Predictions</button>
+					<button class="tablinks" onclick="openTab(event, 'data-tab')">Data</button>
+					<button class="tablinks" onclick="openTab(event, 'comparisons-tab')">Comparisons</button>
+				</div>
+				
+				<!-- Tab content -->
+				<div id="predictions-tab" class="tabcontent">
+					<p>Perhaps put AI analysis here</p>
+				</div>
+				
+				<div id="data-tab" class="tabcontent">
+					<canvas id="covid-chart-new" width="800" height="500"></canvas>
+					<canvas id="covid-chart-totals" width="800" height="500"></canvas>
+					<canvas id="covid-tests" width="800" height="500"></canvas>
+				</div>
+				
+				<div id="comparisons-tab" class="tabcontent">
+					<p>Details about some variables go here...</p>
+				</div>
+				`);
+				document.getElementById("defaultOpen").click();
+			line_graphs.forEach((n) => $("#data-tab").append(`<canvas id="${"comparison"+n}" width="800" height="500"></canvas>`))
+
 				//location,date,total_cases,new_cases,total_deaths,new_deaths,
 				//total_cases_per_million,new_cases_per_million,total_deaths_per_million,
 				//new_deaths_per_million,total_tests,new_tests,total_tests_per_thousand,
@@ -343,7 +367,7 @@ map.on('click', function (info) {
 				});
 
 				// Comparison with the world data
-				for (var n = 17; n < covid_headers.length; n++) {
+				line_graphs.forEach((n) => {
 					new Chart(document.getElementById("comparison"+n), {
 						type: 'line',
 						data: {
@@ -369,7 +393,29 @@ map.on('click', function (info) {
 							animation:false
 						}
 					});
-				}
+				});
+
+				var compiled = "";
+				tables.forEach((n)=>{
+					compiled += `<tr>
+						<th><b>${covid_headers[n]}</b></th>
+						<td>${country_data[covid_headers[n]][0]}</td>
+						<td>${covid_data["World"][covid_headers[n]][0]}</td>
+					</tr>`;
+				});
+
+				// Tables
+				$("#comparisons-tab").append(`
+				<table class="table table-bordered">
+					<tbody>
+					<tr>
+						<th><b>-</b></th>
+						<td><b>${country}</b></td>
+						<td><b>World</b></td>
+					</tr>
+					${compiled}
+					</tbody>
+				</table>`);
 			});
 		}
 		else {
