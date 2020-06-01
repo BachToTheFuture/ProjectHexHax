@@ -81,11 +81,11 @@
         <p> Interact with our map to explore the past, current, and predicted impacts of COVID-19 around the world.</p>
         <p><b>Click on a country or a region to learn more about it.</b></p>
 
-      <h3> 
-        Our Mission
-      </h3>
-	    <hr>
-      <p> HexHax is a part of the 2020 NASA Space Apps COVID-19 Challenge. Together we decided to create a responsive and well-informed website that uses "Earth Observation-derived features with available socio-economic data in order to discover or enhance our understanding of COVID-19 impacts." </p>
+        <h3> 
+          Our Mission
+        </h3>
+        <hr>
+        <p> We trained our machine learning model by integrating Earth Observation derived features with socioeconomic data in order to predict future COVID-19 cases and unemployment rates. By displaying these results on an interactive map, we aim to make information more accessible to the global public. </p>
 			</div>
 		</div>
 	</div>
@@ -128,13 +128,70 @@
     <br><br><br>
   </center>
   
-  <!-- Process page-->
+  <!-- Process Page -->
   <center>
     <h2 class="subpage-title" id="process-page"> Our Process </h2>
     <br><br>
     <img src="static/pictures/process.png" alt="Process" style="width:80%">
-    <br><br><br><br><br><br>
+    <br><br><br><br><br>
 
+    <h4> Training Factors </h4> <br>
+  </center>
+    <div class = "trainingfactors">
+      <li>
+        <strong>Stringency Index:</strong> Each country has a different response to the spread of COVID-19, including closing schools, workplaces, and stores as well as implementing travel bans. The stringency index measures these government responses and ranks the restrictions from 0 to 100, the strictest response being 100. (Source: OurWorldInData.org/coronavirus) 
+        <br><br>
+      </li>
+      
+      <li> 
+        <strong>Accessibility to Cities:</strong>
+          The ability of individuals to access healthcare facilities, educational programs, and financial institutions can be used as an indicator of a the overall socio-economic status a nation's inhabitants. Easy access to cities are represented by a low accessibility score while areas that are difficult to access are represented by a high accessibility score.
+        <br><br>
+      </li>
+
+      <li>
+        <strong>GINI Index:</strong> The GINI coefficient measures the distribution of income. The coefficient values range from 0 (perfect equality) to 1 (perfect inequality). High coefficient values represent greater income inequality, meaning that a small group of individuals receive a large percent of the population's total income, while low coefficient values represent greater income equality, meaning that income is more evenly distributed among a population.
+        <br><br>
+      </li>
+
+      <li>
+        <strong>GDP per capita: </strong> Gross Domestic Product measures value of all goods and services produced by a country. GDP can be used as an indicator of the size of a country's economy and growth rate. GDP per capita divides the country's total economic output by the country's population and can indicate the citizen's standard of living. 
+        <br><br>
+      </li>
+
+      <li> 
+        <strong>Population Density: </strong> Viruses are primarily spread when individuals are in close contact with each other. When people live in densely populated areas, they will to come into contact with each other more frequently, creating more opportunities for a disease to spread. 
+        <br><br>
+      </li>
+
+       <li><strong> Global Human Modification:</strong> The measure of human modification of demonstrates areas of greater urban development. The concentration of individuals in cities or other highly urbanized reegions can accelerate the spread of diseases.
+       <br><br>
+      </li>
+
+      <li>
+        <strong>Unemployment:</strong> After the outbreak of COVID-19 in the United States, the nation experienced a record-breaking surge in unemployment claims due to the economic impacts of the virus spread. To predict future unemployment in the United States, unemployment data was used to train our machine learning model.
+        <br><br>
+      </li>
+      
+      <li>
+        <strong>COVID-19 Cases, Deaths, and Testing:</strong> In order to predict future COVID-19 cases, data regarding new and total cases per million, new and total deaths per million, and new and total tests per thousand were used to train our machin learning model.
+        <br><br>
+      </li>
+
+      <li>
+        <strong>Population over 65:</strong> Older individuals and individuals with underlying health conditions are more susceptible to COVID-19. Older individuals are also more likely to have underlying health conditions that places them at greater risk. According to the CDC, eight of ten reported deaths have been in adults 65 years or older. Countries with a greater population of older individuals may witness a greater number of cases of COVID-19.
+        <br><br>
+      </li>
+
+      <li>
+        <strong>Hospital Beds per 100k:</strong> Individuals infected with the virus may need to be admitted to hospitals in order to ensure their survival due to symptoms of difficulty breathing and low oxygen levels. A measure of hospital beds per 100k can be used as an indicator of hospital capacity and a country's ability to treat ill individuals once infected with the virus. Ability to treat individuals may lead to greater recovery rates.
+        <br><br>
+      </li>
+
+      <br><br><br>
+    </div>
+
+  <center>
     <div class="tech">
       <h4> Tools and Technology </h4>
       <br>
@@ -173,29 +230,6 @@
       </table>
     </div>
     <br>
-    <!-- 
-    <div class = "tools" style = "width:95%">
-      <div class = "tool">
-        <img src = "pictures/htmlLogo.png" alt="HTML Logo" style = "width: 100px">
-      </div>
-      <div class = "tool">
-        <img src = "pictures/csslogo.png" alt="CSS Logo" style = "width: 73px">
-      </div>
-      <div class = "tool">
-        <img src = "pictures/jslogo.png" alt="JS Logo" style = "width: 95px">
-      </div>
-      <div class = "tool">
-        <img src = "pictures/replitlogo.svg" alt="replit Logo" style = "width: 180px">
-      </div>
-      <div class = "tool">
-        <img src = "pictures/pythonlogo.png" alt="Python Logo" style = "width: 250px">
-      </div>
-      <div class = "tool">
-        <img src = "pictures/earthenginelogo.jpg" alt="Earth Engine Logo" style = "width: 250px">
-      </div>
-    </div>
-     -->
-
   </center>
 
   <!-- Meet the team page -->
@@ -286,31 +320,32 @@
     <!-- Our Sources -->
    <!-- Our Sources -->
    <footer>
-    <h2>Sources</h2>
-    <h4>
-      Dependencies
-    </h4>
-    <ul>
-      <li> <a href="https://leafletjs.com/"> Leaflet</a></li>
-      <li> <a href="https://www.openstreetmap.org/#map=5/38.007/-95.844"> OpenStreetMap API</a></li>
-      <li> <a href="https://nominatim.org/"> Nominatim API</a></li>
-      <li> <a href="https://www.heroku.com/"> Heroku</a></li>
-    </ul>
-      
-    <h4>
-      Data
-    </h4>
-    <ul>
-      <li> <a href="https://ourworldindata.org/coronavirus-source-data"> Global Coronavirus Data </a></li>
-      <li> <a href="https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/"> US State Specific COVID Data </a></li>
-      <li> <a href="https://malariaatlas.org/research-project/accessibility_to_cities/"> Global Accessibility to Cities </li>
-      <li> <a href="https://oui.doleta.gov/unemploy/claims.asp"> US State Unemployment Claims </a></li>
-      <li> <a href="https://developers.google.com/earth-engine/datasets/catalog/CSP_HM_GlobalHumanModification#description"> Global Human Modification </a> </li>
-      <li> <a href="https://developers.google.com/earth-engine/datasets/catalog/NASA_NEX-GDDP"> Climate </a></li>
-      <li> <a href="https://data.worldbank.org/indicator/SI.POV.GINI?view=map"> GINI Index</a></li>
-      <li> <a href="https://developers.google.com/earth-engine/datasets/catalog/CIESIN_GPWv411_GPW_UNWPP-Adjusted_Population_Density#bands"> Population Density </a></li>
-    </ul>
-  </footer>
+      <h2>Sources</h2>
+      <h4>
+        Dependencies
+      </h4>
+      <ul>
+        <li> <a href="https://leafletjs.com/"> Leaflet</a></li>
+        <li> <a href="https://www.openstreetmap.org/#map=5/38.007/-95.844"> OpenStreetMap API</a></li>
+        <li> <a href="https://nominatim.org/"> Nominatim API</a></li>
+        <li> <a href="https://www.heroku.com/"> Heroku</a></li>
+      </ul>
+        
+      <h4>
+        Data
+      </h4>
+      <ul>
+        <li> <a href="https://ourworldindata.org/coronavirus-source-data"> Global COVID-19 Data </a></li>
+        <li> <a href="https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/"> US State Specific COVID-19 Data </a></li>
+        <li> <a href="https://malariaatlas.org/research-project/accessibility_to_cities/"> Global Accessibility to Cities </li>
+        <li> <a href="https://oui.doleta.gov/unemploy/claims.asp"> US State Unemployment Claims </a></li>
+        <li> <a href="https://developers.google.com/earth-engine/datasets/catalog/CSP_HM_GlobalHumanModification#description"> Global Human Modification </a> </li>
+        <li> <a href="https://developers.google.com/earth-engine/datasets/catalog/NASA_NEX-GDDP"> Climate </a></li>
+        <li> <a href="https://data.worldbank.org/indicator/SI.POV.GINI?view=map"> GINI Index</a></li>
+        <li> <a href="https://developers.google.com/earth-engine/datasets/catalog/CIESIN_GPWv411_GPW_UNWPP-Adjusted_Population_Density#bands"> Population Density </a></li>
+      </ul>
+    </footer>
+
     
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

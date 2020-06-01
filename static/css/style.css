@@ -127,6 +127,13 @@ footer {
   float:left;
 }
 
+.trainingfactors{
+  width: 88%;
+  float:left;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
 table, th, td {
   border-collapse: collapse;
   text-align: center;
