@@ -179,6 +179,23 @@ map.on('click', function (info) {
 				</div>
 			</div>`);
 				
+			var predictions_data;
+			var last_og_idx;
+			
+			$.ajax({
+				url: '/predict',
+				data: {"country": country, "data": JSON.stringify(covid_data[country])},
+				type: 'POST',
+				success: function(response){
+					response = JSON.parse(response);
+					predictions_data = response["prediction"];
+					last_og_idx = response["last_og_idx"];
+				},
+				error: function(error){
+					console.log(error);
+				}
+			});
+			
 			$.get(`https://nominatim.openstreetmap.org/search?q=${data.address.state + "+" + data.address.country}&polygon_geojson=1&format=json`, function(data) {
 				console.log(data);
 				if (bounds_geojson !== undefined) map.removeLayer(bounds_geojson);
@@ -216,6 +233,7 @@ map.on('click', function (info) {
 				<div class="tab">
 					<button class="tablinks" onclick="openTab(event, 'regional-data-tab')" id="defaultOpen">Regional Data</button>
 					<button class="tablinks" onclick="openTab(event, 'country-data-tab')">Country Data</button>
+					<button class="tablinks" onclick="openTab(event, 'country-predictions-tab')">Country Predictions</button>
 					<button class="tablinks" onclick="openTab(event, 'comparisons-tab')">Comparisons</button>
 				</div>
 				
@@ -230,13 +248,18 @@ map.on('click', function (info) {
 					<canvas id="covid-chart-totals" width="800" height="500"></canvas>
 					<canvas id="covid-tests" width="800" height="500"></canvas>
 				</div>
+
+				<div id="country-predictions-tab" class="tabcontent">
+					<b> Predictions of 20 days into the future </b>
+				</div>
 				
 				<div id="comparisons-tab" class="tabcontent">
 				</div>
 				`);
 				document.getElementById("defaultOpen").click();
 				line_graphs.forEach((n) => $("#country-data-tab").append(`<canvas id="${"comparison"+n}" width="800" height="500"></canvas>`))
-		  
+				predict_labels.forEach((n) => $("#country-predictions-tab").append(`<canvas id="${"prediction"+n}" width="800" height="500"></canvas>`))
+
 				//console.log(total_deaths)
 				new Chart(document.getElementById("covid-chart-totals-region"), {
 					type: 'line',
@@ -372,6 +395,32 @@ map.on('click', function (info) {
 						animation:false
 					}
 				});
+				
+				// Prediction for the country
+				predict_labels.forEach((n) => {
+					new Chart(document.getElementById("prediction"+n), {
+						type: 'line',
+						data: {
+							labels: predictions_data.date,
+							datasets: [{
+								data: predictions_data[covid_headers[n]],
+								label: country + " data",
+								borderColor: "#63d13e",
+								fill: false
+								}
+							]
+						},
+						options: {
+							title: {
+								display: true,
+								text: covid_headers[n]
+							},
+							animation:false
+						},
+						lineAtIndex: [last_og_idx]
+					});
+				});
+
 				// Comparison with the world data
 				line_graphs.forEach((n) => {
 					new Chart(document.getElementById("comparison"+n), {
@@ -612,7 +661,6 @@ map.on('click', function (info) {
 				});
 
 				// Predictions
-				console.log(predictions_data)
 				predict_labels.forEach((n) => {
 					new Chart(document.getElementById("prediction"+n), {
 						type: 'line',

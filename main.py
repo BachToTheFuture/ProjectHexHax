@@ -102,8 +102,8 @@ def predict():
     access = 0
     try:
         x = gini_access.loc[gini_access['Country'] == country]
-        gini = x["Gini Coefficient"]
-        access = x["accessibility_weighted_mean"]
+        gini = x["Gini Coefficient"].item()
+        access = x["accessibility_weighted_mean"].item()
     except:
         gini = 38
         access = 442
@@ -111,6 +111,7 @@ def predict():
     print(country)
     last_og_idx = len(data["date"])-1
     data = predict_future(data, 20, gini=gini, access=access)
+    print("Successful!")
 
     # PREDICTION SHOULD BE IN THIS FORMAT
     return json.dumps({'status':'OK','prediction':data, 'last_og_idx': last_og_idx})
