@@ -1,4 +1,10 @@
 
+
+$(window).on('load', function() {
+	$("#cover").fadeOut(200, function(){$(this).remove();});
+  });
+
+  
 function openTab(evt, cityName) {
 	// Declare all variables
 	var i, tabcontent, tablinks;

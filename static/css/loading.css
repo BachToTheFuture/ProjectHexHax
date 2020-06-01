@@ -15,6 +15,26 @@
 	list-style: none;
 }
 
+.outer {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+.middle {
+display: table-cell;
+vertical-align: middle;
+}
+
+.inner {
+margin-left: auto;
+margin-right: auto;
+/*whatever width you want*/
+}
+
 .cssload-flex-container {
 	display: flex;
 		display: -o-flex;

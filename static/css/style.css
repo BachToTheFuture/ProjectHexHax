@@ -354,6 +354,8 @@ footer h4{
   background-color: #f1f1f1;
 }
 
+#cover {position: fixed; height: 100%; width: 100%; top:0; left: 0; background: #fff; z-index:999999999999;}
+
 /* Style the buttons that are used to open the tab content */
 .tab button {
   font-family: 'Open Sans', sans-serif;

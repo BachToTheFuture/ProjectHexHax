@@ -9,19 +9,48 @@
     <link rel="icon" href="static/pictures/logo.png">
   </head>
   <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- cover everything until everything is loaded -->
+    <div id="cover">
+      
+            <div class="cssload-container">
+              <ul class="cssload-flex-container">
+                <li>
+                  <span class="cssload-loading cssload-one"></span>
+                  <span class="cssload-loading cssload-two"></span>
+                  <span class="cssload-loading-center"></span>
+                </li>
+                </ul>
+              </div>
+            
+    </div>
+    <script>
+      $(updateBoxDimension);
+      $(window).on('resize', updateBoxDimension);
+
+      function updateBoxDimension() {
+          var $box = $('.cssload-container');
+
+          // To center the box
+          var boxLeft = ($(window).width()) / 2 - ($box.width() / 2),
+              boxTop = ($(window).height()) / 2 - ($box.height() / 2);
+
+        $box.attr('style', `margin-left: ${boxLeft-15}px !important; margin-top: ${boxTop}px !important;`)
+      }
+    </script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
     <!-- Needed for interactive map -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.3/leaflet.css'>
     <link rel="stylesheet" href="static/css/sidebar.css">
-    <script src="static/js/sidebar.js"></script>
+    <script src="static/js/sidebar.js?rndstr=<%= getRandomStr() %>"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
-    <link href="static/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="static/css/loading.css" rel="stylesheet" type="text/css" />
-    <script src="static/js/script.js"></script>
+    <link href="static/css/style.css?rndstr=<%= getRandomStr() %>" rel="stylesheet" type="text/css" />
+    <link href="static/css/loading.css?rndstr=<%= getRandomStr() %>" rel="stylesheet" type="text/css" />
+    <script src="static/js/script.js?rndstr=<%= getRandomStr() %>"></script>
     
 	<!--Code for navbar-->
 	<nav class="navbar navbar-expand-lg navbar-light sticky-top">
@@ -103,7 +132,7 @@
   <script src="static/js/us-states.js"></script>
   <script src="static/js/countries.js"></script>
   -->
-	<script src="static/js/map.js"></script>
+	<script src="static/js/map.js?rndstr=<%= getRandomStr() %>"></script>
 
     <div class = "homeinfo">
       <!--Enter general information for the website and what it does-->

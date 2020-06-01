@@ -137,6 +137,7 @@ map.on('click', function (info) {
 						<span class="cssload-loading cssload-two"></span>
 						<span class="cssload-loading-center"></span>
 					</li>
+				</ul>
 				</div>
 			</div>`);
 				
@@ -243,6 +244,7 @@ map.on('click', function (info) {
 						<span class="cssload-loading cssload-two"></span>
 						<span class="cssload-loading-center"></span>
 					</li>
+				</ul>
 				</div>
 			</div>`);
 
@@ -257,15 +259,11 @@ map.on('click', function (info) {
 				<h2>${country}</h2>
 
 				<div class="tab">
-					<button class="tablinks" onclick="openTab(event, 'predictions-tab')" id="defaultOpen">Predictions</button>
-					<button class="tablinks" onclick="openTab(event, 'data-tab')">Data</button>
+					<button class="tablinks" onclick="openTab(event, 'data-tab')" id="defaultOpen">Data</button>
 					<button class="tablinks" onclick="openTab(event, 'comparisons-tab')">Comparisons</button>
 				</div>
 				
 				<!-- Tab content -->
-				<div id="predictions-tab" class="tabcontent">
-					<p>Perhaps put AI analysis here</p>
-				</div>
 				
 				<div id="data-tab" class="tabcontent">
 					<canvas id="covid-chart-new" width="800" height="500"></canvas>
