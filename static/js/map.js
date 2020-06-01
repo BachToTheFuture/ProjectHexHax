@@ -274,7 +274,6 @@ map.on('click', function (info) {
 				</div>
 				
 				<div id="comparisons-tab" class="tabcontent">
-					<p>Details about some variables go here...</p>
 				</div>
 				`);
 				document.getElementById("defaultOpen").click();

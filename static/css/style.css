@@ -348,13 +348,16 @@ footer h4{
 /* TABS*/
 /* Style the tab */
 .tab {
+  border-radius:10px;
   overflow: hidden;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   background-color: #f1f1f1;
 }
 
 /* Style the buttons that are used to open the tab content */
 .tab button {
+  font-family: 'Open Sans', sans-serif;
+  font-weight:500px;
   background-color: inherit;
   float: left;
   border: none;
@@ -377,9 +380,7 @@ footer h4{
 /* Style the tab content */
 .tabcontent {
   display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
+  padding: 3px 6px;
 }
 
 .tabcontent {
