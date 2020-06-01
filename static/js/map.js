@@ -148,11 +148,7 @@ map.on('click', function (info) {
 					style: style,
 					click: zoomToFeature
 				}).addTo(map);
-				$("#infobar").html(`
-				<h2>${state + ", " + country}</h2>
-				<hr>
-				<canvas id="covid-chart-totals" width="800" height="500"></canvas>
-				<canvas id="unemployment-chart" width="800" height="500">`);
+
 				let total_cases = []
 				let total_deaths = []
 				let dates = []
@@ -175,9 +171,36 @@ map.on('click', function (info) {
 				   continued_claims.push(state_unemployment[state][u]["continued_claims"]);
 				   unemployment_dates.push(state_unemployment[state][u]["date"]);
 				}
+
+				$("#infobar").html(`
+				<h2>${state + ", " + country}</h2>
+
+				<div class="tab">
+					<button class="tablinks" onclick="openTab(event, 'regional-data-tab')" id="defaultOpen">Regional Data</button>
+					<button class="tablinks" onclick="openTab(event, 'country-data-tab')">Country Data</button>
+					<button class="tablinks" onclick="openTab(event, 'comparisons-tab')">Comparisons</button>
+				</div>
+				
+				<!-- Tab content -->
+				<div id="regional-data-tab" class="tabcontent">
+					<canvas id="covid-chart-totals-region" width="800" height="500"></canvas>
+					<canvas id="unemployment-chart" width="800" height="500">
+				</div>
+
+				<div id="country-data-tab" class="tabcontent">
+					<canvas id="covid-chart-new" width="800" height="500"></canvas>
+					<canvas id="covid-chart-totals" width="800" height="500"></canvas>
+					<canvas id="covid-tests" width="800" height="500"></canvas>
+				</div>
+				
+				<div id="comparisons-tab" class="tabcontent">
+				</div>
+				`);
+				document.getElementById("defaultOpen").click();
+				line_graphs.forEach((n) => $("#country-data-tab").append(`<canvas id="${"comparison"+n}" width="800" height="500"></canvas>`))
 		  
 				//console.log(total_deaths)
-				new Chart(document.getElementById("covid-chart-totals"), {
+				new Chart(document.getElementById("covid-chart-totals-region"), {
 					type: 'line',
 					data: {
 					labels: dates,
@@ -226,8 +249,142 @@ map.on('click', function (info) {
 						  }
 						  }
 					  });
-			  
+					//location,date,total_cases,new_cases,total_deaths,new_deaths,
+				//total_cases_per_million,new_cases_per_million,total_deaths_per_million,
+				//new_deaths_per_million,total_tests,new_tests,total_tests_per_thousand,
+				//new_tests_per_thousand,new_tests_smoothed,new_tests_smoothed_per_thousand,
+				//tests_units,stringency_index,population,population_density,median_age,aged_65_older,
+				//aged_70_older,gdp_per_capita,extreme_poverty,cvd_death_rate,diabetes_prevalence,
+				//female_smokers,male_smokers,handwashing_facilities,hospital_beds_per_100k
+				var country_data = covid_data[country];
+				console.log(country);
+				// New cases/deaths
+				new Chart(document.getElementById("covid-chart-new"), {
+					type: 'line',
+					data: {
+						labels: country_data.date,
+						datasets: [{
+							data: country_data.new_cases,
+							label: "New Cases",
+							borderColor: "#63d13e",
+							fill: false
+							}, {
+							data: country_data.new_deaths,
+							label: "New Deaths",
+							borderColor: "#ff3e33",
+							fill: false
+							}
+						]
+					},
+					options: {
+						title: {
+							display: true,
+							text: 'COVID-19 New Cases and Deaths for '+country
+						}
+					}
+				});
+				// Totals
+				new Chart(document.getElementById("covid-chart-totals"), {
+					type: 'line',
+					data: {
+						labels: country_data.date,
+						datasets: [{
+							data: country_data.total_cases,
+							label: "Total Cases",
+							borderColor: "#63d13e",
+							fill: false
+							}, {
+							data: country_data.total_deaths,
+							label: "Total Deaths",
+							borderColor: "#ff3e33",
+							fill: false
+							}
+						]
+					},
+					options: {
+						title: {
+							display: true,
+							text: 'COVID-19 Total Cases and Deaths for '+country
+						}
+					}
+				});
+				// New and total tests for COVID
+				new Chart(document.getElementById("covid-tests"), {
+					type: 'line',
+					data: {
+						labels: country_data.date,
+						datasets: [{
+							data: country_data.new_tests,
+							label: "New Tests",
+							borderColor: "#63d13e",
+							fill: false
+							}, {
+							data: country_data.total_tests,
+							label: "Total Tests",
+							borderColor: "#ff3e33",
+							fill: false
+							}
+						]
+					},
+					options: {
+						title: {
+							display: true,
+							text: 'COVID-19 New and Total Tests for '+country
+						},
+						animation:false
+					}
+				});
+				// Comparison with the world data
+				line_graphs.forEach((n) => {
+					new Chart(document.getElementById("comparison"+n), {
+						type: 'line',
+						data: {
+							labels: country_data.date,
+							datasets: [{
+								data: country_data[covid_headers[n]],
+								label: country + " data",
+								borderColor: "#63d13e",
+								fill: false
+								}, {
+								data: covid_data["World"][covid_headers[n]],
+								label: "World data",
+								borderColor: "#ff3e33",
+								fill: false
+								}
+							]
+						},
+						options: {
+							title: {
+								display: true,
+								text: covid_headers[n]+' for '+country
+							},
+							animation:false
+						}
+					});
+				});
+				var compiled = "";
+				tables.forEach((n)=>{
+					compiled += `<tr>
+						<th><b>${covid_headers[n]}</b></th>
+						<td>${country_data[covid_headers[n]][0]}</td>
+						<td>${covid_data["World"][covid_headers[n]][0]}</td>
+					</tr>`;
+				});
+				// Tables
+				$("#comparisons-tab").append(`
+				<table class="table table-bordered">
+					<tbody>
+					<tr>
+						<th><b>Feature</b></th>
+						<td><b>${country}</b></td>
+						<td><b>World</b></td>
+					</tr>
+					${compiled}
+					</tbody>
+				</table>`);
 			});
+
+				
 			
 		}
 
@@ -275,7 +432,7 @@ map.on('click', function (info) {
 				</div>
 				`);
 				document.getElementById("defaultOpen").click();
-			line_graphs.forEach((n) => $("#data-tab").append(`<canvas id="${"comparison"+n}" width="800" height="500"></canvas>`))
+				line_graphs.forEach((n) => $("#data-tab").append(`<canvas id="${"comparison"+n}" width="800" height="500"></canvas>`))
 
 				//location,date,total_cases,new_cases,total_deaths,new_deaths,
 				//total_cases_per_million,new_cases_per_million,total_deaths_per_million,
@@ -406,7 +563,7 @@ map.on('click', function (info) {
 				<table class="table table-bordered">
 					<tbody>
 					<tr>
-						<th><b>-</b></th>
+						<th><b>Feature</b></th>
 						<td><b>${country}</b></td>
 						<td><b>World</b></td>
 					</tr>
