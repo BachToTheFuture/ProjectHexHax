@@ -1,4 +1,38 @@
 
+// Charts plugin
+const verticalLinePlugin = {
+	getLinePosition: function (chart, pointIndex) {
+		const meta = chart.getDatasetMeta(0); // first dataset is used to discover X coordinate of a point
+		const data = meta.data;
+		return data[pointIndex]._model.x;
+	},
+	renderVerticalLine: function (chartInstance, pointIndex) {
+		const lineLeftOffset = this.getLinePosition(chartInstance, pointIndex);
+		const scale = chartInstance.scales['y-axis-0'];
+		const context = chartInstance.chart.ctx;
+  
+		// render vertical line
+		context.beginPath();
+		context.strokeStyle = '#f55951';
+		context.moveTo(lineLeftOffset, scale.top);
+		context.lineTo(lineLeftOffset, scale.bottom);
+		context.stroke();
+  
+		// write label
+		context.fillStyle = "#f55951";
+		context.textAlign = 'center';
+		context.fillText('Prediction', lineLeftOffset, (scale.bottom - scale.top) / 2 + scale.top);
+	},
+  
+	afterDatasetsDraw: function (chart, easing) {
+		if (chart.config.lineAtIndex) {
+			chart.config.lineAtIndex.forEach(pointIndex => this.renderVerticalLine(chart, pointIndex));
+		}
+	}
+	};
+  
+	Chart.plugins.register(verticalLinePlugin);
+	
 // The map
 
 var map = L.map('mapid', {
@@ -83,6 +117,7 @@ var bounds_geojson;
 // Used to determine which factor gets which type of diagram/graph
 var tables = [19, 20, 21, 22, 23, 24, 25, 28, 29];
 var remove = [17, 30, 31, 27];
+var predict_labels = [7, 8, 9,10,13,14,18];
 var line_graphs = [18];
 
 map.on('click', function (info) {
@@ -393,12 +428,18 @@ map.on('click', function (info) {
 
 		// Show country data otherwise if state data is undefined
 		else if (covid_data[country]) {
+
+			var predictions_data;
+			var last_og_idx;
+			
 			$.ajax({
 				url: '/predict',
-				data: {"country": country},
+				data: {"country": country, "data": JSON.stringify(covid_data[country])},
 				type: 'POST',
 				success: function(response){
-					console.log(response);
+					response = JSON.parse(response);
+					predictions_data = response["prediction"];
+					last_og_idx = response["last_og_idx"];
 				},
 				error: function(error){
 					console.log(error);
@@ -432,6 +473,7 @@ map.on('click', function (info) {
 
 				<div class="tab">
 					<button class="tablinks" onclick="openTab(event, 'data-tab')" id="defaultOpen">Data</button>
+					<button class="tablinks" onclick="openTab(event, 'predictions-tab')">Predictions</button>
 					<button class="tablinks" onclick="openTab(event, 'comparisons-tab')">Comparisons</button>
 				</div>
 				
@@ -443,11 +485,15 @@ map.on('click', function (info) {
 					<canvas id="covid-tests" width="800" height="500"></canvas>
 				</div>
 				
+				<div id="predictions-tab" class="tabcontent">
+				</div>
+
 				<div id="comparisons-tab" class="tabcontent">
 				</div>
 				`);
 				document.getElementById("defaultOpen").click();
 				line_graphs.forEach((n) => $("#data-tab").append(`<canvas id="${"comparison"+n}" width="800" height="500"></canvas>`))
+				predict_labels.forEach((n) => $("#predictions-tab").append(`<canvas id="${"prediction"+n}" width="800" height="500"></canvas>`))
 
 				//location,date,total_cases,new_cases,total_deaths,new_deaths,
 				//total_cases_per_million,new_cases_per_million,total_deaths_per_million,
@@ -561,6 +607,32 @@ map.on('click', function (info) {
 							},
 							animation:false
 						}
+					});
+				});
+
+				// Predictions
+				console.log(predictions_data)
+				predict_labels.forEach((n) => {
+					new Chart(document.getElementById("prediction"+n), {
+						type: 'line',
+						data: {
+							labels: predictions_data.date,
+							datasets: [{
+								data: predictions_data[covid_headers[n]],
+								label: country + " data",
+								borderColor: "#63d13e",
+								fill: false
+								}
+							]
+						},
+						options: {
+							title: {
+								display: true,
+								text: covid_headers[n]
+							},
+							animation:false
+						},
+						lineAtIndex: [last_og_idx]
 					});
 				});
 
