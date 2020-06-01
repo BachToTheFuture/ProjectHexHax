@@ -245,7 +245,7 @@ map.on('click', function (info) {
 						  options: {
 						  title: {
 							  display: true,
-							  text: 'Unemployment during COVID-19 '+country
+							  text: 'Unemployment in ' + state+' during COVID-19 '
 						  }
 						  }
 					  });
