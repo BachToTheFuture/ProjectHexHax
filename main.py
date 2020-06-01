@@ -62,7 +62,7 @@ def append_point_to_json(point, data):
     data["gdp_per_capita"].append(point[9])
     return data
  
-def predict_future(data, days):
+def predict_future(data, days, gini=38, access=442):
     start = datetime.strptime(data["date"][-1], '%Y-%m-%d')
     for x in range(days):
         start += timedelta(days=1)
@@ -79,7 +79,7 @@ def predict_future(data, days):
             data["aged_65_older"][-1],
             data["gdp_per_capita"][-1],
             # gini, access: default values for now
-            0, 38, 442
+            0, gini, access
         ]]
         point2 = [tcpm.predict(point1)[0],
                 ncpm.predict(point1)[0],
@@ -90,7 +90,7 @@ def predict_future(data, days):
                 stidx.predict(point1)[0],
                 data["population_density"][-1],
                 data["aged_65_older"][-1],
-                data["gdp_per_capita"][-1],0,38,442]
+                data["gdp_per_capita"][-1],0,gini,access]
         data = append_point_to_json(point2, data)
     return data
 
@@ -98,9 +98,19 @@ def predict_future(data, days):
 def predict():
     country = request.form["country"]
     data = json.loads(request.form["data"])
+    gini = 0
+    access = 0
+    try:
+        x = gini_access.loc[gini_access['Country'] == country]
+        gini = x["Gini Coefficient"]
+        access = x["accessibility_weighted_mean"]
+    except:
+        gini = 38
+        access = 442
+
     print(country)
     last_og_idx = len(data["date"])-1
-    data = predict_future(data, 10)
+    data = predict_future(data, 20, gini=gini, access=access)
 
     # PREDICTION SHOULD BE IN THIS FORMAT
     return json.dumps({'status':'OK','prediction':data, 'last_og_idx': last_og_idx})

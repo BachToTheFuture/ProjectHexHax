@@ -117,7 +117,7 @@ var bounds_geojson;
 // Used to determine which factor gets which type of diagram/graph
 var tables = [19, 20, 21, 22, 23, 24, 25, 28, 29];
 var remove = [17, 30, 31, 27];
-var predict_labels = [7, 8, 9,10,13,14,18];
+var predict_labels = [8, 10];
 var line_graphs = [18];
 
 map.on('click', function (info) {
@@ -486,6 +486,7 @@ map.on('click', function (info) {
 				</div>
 				
 				<div id="predictions-tab" class="tabcontent">
+					<b>Prediction data for 20 days into the future</b>
 				</div>
 
 				<div id="comparisons-tab" class="tabcontent">
