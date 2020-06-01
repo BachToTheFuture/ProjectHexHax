@@ -86,6 +86,9 @@ var remove = [17, 30, 31, 27];
 var line_graphs = [18];
 
 map.on('click', function (info) {
+	// Request prediction
+	var extrapolation = [];
+
 	sidebar.show();
     $.get(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${info.latlng.lat}&lon=${info.latlng.lng}`, function(data){
 		// Display the outline
@@ -390,6 +393,18 @@ map.on('click', function (info) {
 
 		// Show country data otherwise if state data is undefined
 		else if (covid_data[country]) {
+			$.ajax({
+				url: '/predict',
+				data: {"country": country},
+				type: 'POST',
+				success: function(response){
+					console.log(response);
+				},
+				error: function(error){
+					console.log(error);
+				}
+			});
+			
 			$("#infobar").html(`
 				<h2>${country}</h2>
 				<hr>
